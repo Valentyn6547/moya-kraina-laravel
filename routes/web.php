@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Register;
+use App\Http\Controllers\RegisterSubmit;
+use App\Http\Controllers\Gathers;
+use App\Http\Controllers\Activities;
+use App\Http\Controllers\Contacts;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +22,12 @@ use App\Http\Controllers\Home;
 
 
 Route::get('/', [Home::class, 'run']);
+Route::get('/register', [Register::class, 'run']);
+Route::get('/gathers', [Gathers::class, 'run']);
+Route::get('/activities', [Activities::class, 'run']);
+Route::get('/contacts', [Contacts::class, 'run']);
+
+Route::post('/register/submit', [RegisterSubmit::class, 'submit']);
 
 
 
