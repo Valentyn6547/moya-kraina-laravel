@@ -5266,12 +5266,6 @@ figcaption {
     font-size: 1.3rem;
 }
 
-.homebuttons {
-    width: 150px;
-    height: 50px;
-    margin-left: 43px;
-}
-
 .btn-hover-4 {
     color: #fff;
     border-radius: 5px;
@@ -5581,6 +5575,30 @@ figcaption {
     overflow: hidden;
 }
 
+@media screen and (max-width: 1440px) {
+    .sendmessage {
+        margin-left: 10px; /* Відступ для екранів з розміром до 1440px */
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+    .sendmessage {
+        margin-left: 15px; /* Відступ для екранів з розміром від 1440px до 1680px */
+    }
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .sendmessage {
+        margin-left: 200px; /* Відступ для екранів з розміром від 1680px до 1920px */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .sendmessage {
+        margin-left: 25px; /* Відступ для екранів з розміром більше 1920px */
+    }
+}
+
 .creategather {
     color: #000;
     border: 2px solid #000;
@@ -5704,11 +5722,6 @@ figcaption {
 
     .additionaluserinfotextblock {
         left: 905px;
-    }
-
-    .text2 {
-        margin-left: 175px;
-        left: 298px;
     }
 
     .form-box {
@@ -11524,15 +11537,6 @@ figcaption {
     left: 277px;
 }
 
-.sendmessagebutton {
-    background-color: #000;
-    border-radius: 20px;
-    margin-left: 220px;
-    font-family: Lato, sans-serif;
-    position: relative;
-    left: 369px;
-}
-
 .makeinitiationbutton-copy,
 .makeinitiationbutton-copy-copy {
     color: #000;
@@ -12658,8 +12662,65 @@ figcaption {
 
 .homebuttons {
     width: 150px;
+    max-width: 1440px;
     height: 50px;
-    margin-left: 43px;
+    display: block;
+}
+
+.text2 {
+    font-family: Oswald, sans-serif;
+    font-size: 2.5rem;
+    position: relative;
+    top: -25px;
+    left: 277px;
+}
+
+@media screen and (max-width: 1440px) {
+    .text2 {
+        margin-left: 10px; /* Відступ для екранів з розміром до 1440px */
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+    .text2 {
+        margin-left: 150px; /* Відступ для екранів з розміром від 1440px до 1680px */
+    }
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .text2 {
+        margin-left: 350px; /* Відступ для екранів з розміром від 1680px до 1920px */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .text2 {
+        margin-left: 25px; /* Відступ для екранів з розміром більше 1920px */
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .homebuttons {
+        margin-left: 10px; /* Відступ для екранів з розміром до 1440px */
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+    .homebuttons {
+        margin-left: 15px; /* Відступ для екранів з розміром від 1440px до 1680px */
+    }
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .homebuttons {
+        margin-left: 215px; /* Відступ для екранів з розміром від 1680px до 1920px */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .homebuttons {
+        margin-left: 320px; /* Відступ для екранів з розміром більше 1920px */
+    }
 }
 
 .btn-hover-4 {
@@ -12710,12 +12771,6 @@ figcaption {
     position: absolute;
 }
 
-.button3-wrapper-copie-this {
-    width: 200px;
-    height: 80px;
-    margin-left: 64px;
-}
-
 .button3 {
     z-index: 1;
     color: #000;
@@ -12760,11 +12815,6 @@ figcaption {
     text-decoration: none;
     position: absolute;
     overflow: hidden;
-}
-
-.button3-wrapper-copie-this-copy {
-    width: 200px;
-    height: 80px;
 }
 
 .home-donate {
@@ -12956,19 +13006,6 @@ figcaption {
     margin-top: -40px;
     margin-left: -45px;
     position: absolute;
-}
-
-.sendmessage {
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 20px;
-    margin-left: 41px;
-    padding: 9px 45px 15px;
-    text-decoration: none;
-    position: relative;
-    top: -5px;
-    left: 560px;
-    overflow: hidden;
 }
 
 .creategather {
@@ -13287,11 +13324,6 @@ figcaption {
 
     .additionaluserinfotextblock {
         left: 905px;
-    }
-
-    .text2 {
-        margin-left: 175px;
-        left: 298px;
     }
 
     .form-box {
