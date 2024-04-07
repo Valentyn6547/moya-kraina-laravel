@@ -11347,7 +11347,7 @@ figcaption {
 .gather-gatherheader {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
-    padding: 65px 30px 18px;
+    padding: 200px 30px 18px;
     position: relative;
 }
 
@@ -12720,6 +12720,12 @@ figcaption {
 @media screen and (min-width: 1920px) {
     .homebuttons {
         margin-left: 320px; /* Відступ для екранів з розміром більше 1920px */
+    }
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .form-wrapper {
+        margin-left: 200px; /* Відступ для екранів з розміром від 1680px до 1920px */
     }
 }
 
