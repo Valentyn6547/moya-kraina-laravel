@@ -4,6 +4,15 @@
 <section class="hero-heading-center-13">
     <div class="container-9"></div>
     <div class="form-wrapper">
+      @if ($errors->any())
+          <div class="alert alert-danger" style="margin-bottom: 5vh;">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
       <h2 class="heading-2">Почнемо !</h2>
       <div class="form-box">
         <div class="w-form">
