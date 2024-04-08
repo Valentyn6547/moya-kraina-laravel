@@ -22,7 +22,7 @@ use App\Http\Controllers\gatherExample;
 
 
 
-Route::get('/', [Home::class, 'run']);
+Route::get('/', [Home::class, 'run'])->name('home');;
 Route::get('/register', [Register::class, 'run']);
 Route::get('/gathers', [Gathers::class, 'run']);
 Route::get('/activities', [Activities::class, 'run']);
