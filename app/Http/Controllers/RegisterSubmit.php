@@ -35,9 +35,11 @@ class RegisterSubmit extends Controller
         Session::put('user_id', $user->id);
         Session::put('user_email', $user->email);
         Session::put('user_type', VOLUNTEER);
+        Session::put('autorizated', true);
 
 
         // Redirect or return a response as needed
         return redirect()->route('home')->with('success', 'Registration successful!');
     }
+
 }
