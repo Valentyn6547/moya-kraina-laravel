@@ -9,17 +9,6 @@
     --green-tertiary: #eff7f2;
 }
 
-.w-users-userformpagewrap {
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    max-width: 340px;
-    height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-}
-
 .w-users-userloginformwrapper {
     margin-bottom: 0;
     padding-left: 20px;
@@ -3074,7 +3063,7 @@ figcaption {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
     margin-bottom: auto;
-    padding: 80px 30px;
+    padding: 0px 30px;
     position: relative;
 }
 
@@ -3216,7 +3205,7 @@ figcaption {
 .gathersheaderpart {
     background-color: var(--border);
     border-bottom: 1px solid #e4ebf3;
-    margin-top: -88px;
+    margin-top: 100px;
     padding: 80px 30px 36px;
     position: relative;
 }
@@ -7399,7 +7388,7 @@ figcaption {
     justify-content: center;
     align-items: stretch;
     max-width: 340px;
-    height: 100vh;
+    height: 50vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -10473,14 +10462,6 @@ figcaption {
     position: relative;
 }
 
-.hero-heading-center-5 {
-    background-color: #fff;
-    border-bottom: 1px solid #e4ebf3;
-    margin-bottom: auto;
-    padding: 80px 30px;
-    position: relative;
-}
-
 .container-7 {
     width: 100%;
     max-width: 940px;
@@ -10614,14 +10595,6 @@ figcaption {
 
 .shadow-two-4 {
     box-shadow: 0 4px 24px rgba(150, 163, 181, 0.08);
-}
-
-.gathersheaderpart {
-    background-color: var(--border);
-    border-bottom: 1px solid #e4ebf3;
-    margin-top: -88px;
-    padding: 80px 30px 36px;
-    position: relative;
 }
 
 .div-block {
@@ -15031,4 +15004,276 @@ figcaption {
     font-weight: 800;
     font-style: normal;
     font-display: swap;
+}
+
+.personalinfopart {
+    background-color: #fff;
+    border-bottom: 1px solid #e4ebf3;
+    margin-bottom: -368px;
+    padding: 80px 30px;
+    position: relative;
+}
+
+.personalinfoblock {
+    color: #000;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #c3c3cb;
+    border-radius: 10px;
+    width: 400px;
+    min-width: 400px;
+    margin-left: 185px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.ms-list-container {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.ms-input-row {
+    align-items: center;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.ms-input-row.is-last {
+    margin-bottom: 20px;
+}
+
+.ms-input-label {
+    text-align: left;
+    flex: none;
+    width: 100px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+}
+
+.ms-input-label-copy {
+    text-align: left;
+    flex: none;
+    width: 100px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+}
+
+.ms-image {
+    flex: none;
+    width: 45px;
+    margin-right: 20px;
+}
+
+.ms-image.is-profile-image {
+    opacity: 0.5;
+    background-color: #060606;
+    border-radius: 100px;
+    width: 34px;
+    margin-bottom: auto;
+    margin-left: 5px;
+    font-size: 12px;
+    transition: opacity 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ms-image.is-profile-image:hover {
+    opacity: 1;
+    overflow: visible;
+}
+
+.ms-upload {
+    justify-content: center;
+    align-items: center;
+    width: 150%;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: auto;
+}
+
+.ms-input-row {
+    align-items: center;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.ms-input-row.is-last {
+    margin-bottom: 20px;
+}
+
+.statisticblock {
+    color: #000;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #c3c3cb;
+    border-radius: 10px;
+    width: 400px;
+    min-width: 400px;
+    margin-top: 105px;
+    margin-left: 668px;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    top: -407px;
+    bottom: 0%;
+    left: auto;
+    right: 0%;
+}
+
+.ms-button {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.03em;
+    background-color: #020202;
+    border: 1px solid #2962ff;
+    border-radius: 8px;
+    flex: none;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 13px 16px 11.5px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+    position: relative;
+    top: 0;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.ms-button:hover {
+    box-shadow: none;
+    color: #fff;
+    background-color: #1051b9;
+    transform: translate(0, 2px);
+}
+
+.ms-button:active {
+    background-color: #0a3092;
+}
+
+.ms-list-container {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.makedinitiationsstats,
+.donatedstats {
+    text-align: left;
+    flex: none;
+    width: 250px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+}
+
+.resetpasswordbutton {
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 15px 45px;
+    line-height: 1.2;
+    text-decoration: none;
+    position: relative;
+    top: -384px;
+    bottom: 0;
+    left: 769px;
+    right: 0;
+    overflow: hidden;
+}
+
+
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+    .personalinfoblock {
+        box-shadow: none;
+    }
+    .ms-input-label {
+        font-family: Lato, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .makedinitiationsstats,
+    .donatedstats,
+    .ms-input-label-copy,
+    .createdinitiationsstats,
+    .createdgatherstats {
+        font-family: Lato, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .statisticblock {
+        box-shadow: none;
+        min-width: 300px;
+        height: 200px;
+        margin-top: auto;
+        margin-left: auto;
+        position: relative;
+        top: -340px;
+        bottom: 0;
+        left: -293px;
+        right: 3px;
+    }
+
+    .makedinitiationsstats,
+    .donatedstats,
+    .ms-input-label-copy,
+    .createdinitiationsstats,
+    .createdgatherstats {
+        font-family: Lato, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .resetpasswordbutton {
+        top: -307px;
+        left: 800px;
+    }
+
+    .ms-button {
+        font-family: Lato, sans-serif;
+    }
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .resetpasswordbutton {
+        left: 750px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .personalinfoblock {
+        position: relative;
+        left: 312px;
+    }
+
+    .statisticblock {
+        left: -452px;
+    }
+
+    .resetpasswordbutton {
+        left: 1094px;
+    }
 }
