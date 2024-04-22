@@ -2,6 +2,7 @@
 
 @section('content')
     <form action="{{ route('createGather') }}" method="post" enctype="multipart/form-data">
+        @csrf
     <section class="hero-heading-center-14">
         <div class="container-10">
             <h1 class="centered-heading-6 margin-bottom-32px">Створення збору</h1>
@@ -69,4 +70,6 @@
         </div>
     </section>
     </form>
+    <script src="{{ asset('js/gather.js') }}"></script>
+
 @stop
