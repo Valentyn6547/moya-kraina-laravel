@@ -10,6 +10,7 @@ use App\Http\Controllers\Contacts;
 use App\Http\Controllers\Cabinet;
 use App\Http\Controllers\Initiations;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\ImageUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,12 @@ Route::post('/login', [Login::class, 'login']);
 
 //Cabinet
 Route::get('/cabinet', [Cabinet::class, 'run']);
+Route::get('/create-gather', [Gathers::class, 'createGather']);
+
+
+//other
+Route::post('/upload', [ImageUploadController::class, 'uploadImg'])->name('uploadImg');
+Route::post('/createGather', [Gathers::class, 'createGather'])->name('createGather');
 
 
 

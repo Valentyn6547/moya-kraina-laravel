@@ -30,7 +30,8 @@ class Login extends Controller
         // Attempt to log in the user
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            Session::put('user_id', Auth::user()->id);
+
+            Session::put('user_id', Auth::user()->user_id);
             Session::put('user_email', Auth::user()->email);
             Session::put('user_type', VOLUNTEER);
             Session::put('autorizated', true);

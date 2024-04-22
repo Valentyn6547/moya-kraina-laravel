@@ -31,6 +31,8 @@ class RegisterSubmit extends Controller
         $user->date_of_birth = $validatedData['date'];
         $user->save();
 
+        $request->session()->regenerate();
+
 
         Session::put('user_id', $user->id);
         Session::put('user_email', $user->email);
