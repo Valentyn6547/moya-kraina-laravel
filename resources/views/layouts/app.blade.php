@@ -37,7 +37,7 @@
   <div data-collapse="medium" data-animation="default" data-duration="300" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
     <div class="padding-global">
       <div class="nav_container">
-        
+
         <a href="/" class="w-nav-brand">
             <div class="text-block">Moya Kraina</div>
         </a>
@@ -47,13 +47,13 @@
             <a href="/gathers" class="nav_link w-nav-link">Збори</a>
             <a href="/activities" class="nav_link w-nav-link">Ініціативи</a>
             @if (!empty($autorizated) && $user_type == 'volunteer')
-              <a href="/cabinet/{{ $user_id }}" class="nav_link w-nav-link">Кабінет</a>
-            
+              <a href="/cabinet/" class="nav_link w-nav-link">Кабінет</a>
+
             @else
               <a href="/register" class="nav_link w-nav-link">Реєстрація</a>
               <a href="/login" class="nav_link w-nav-link">Вхід</a>
             @endif
-           
+
             <a href="/contacts" class="nav_link w-nav-link">Контакти</a>
           </div>
         </nav>
