@@ -15207,7 +15207,6 @@ figcaption {
     overflow: hidden;
 }
 
-
 @media screen and (min-width: 1440px) and (max-width: 1680px) {
     .personalinfoblock {
         box-shadow: none;
@@ -15236,7 +15235,7 @@ figcaption {
         position: relative;
         top: -340px;
         bottom: 0;
-        left: -293px;
+        left: -300px;
         right: 3px;
     }
 
