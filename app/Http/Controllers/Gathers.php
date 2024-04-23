@@ -18,7 +18,6 @@ class Gathers extends Controller
     function createGatherPost(Request $request){
 
        $validatedData = $request->validate([
-           'user_id' => 'required|integer|exists:users,user_id',
            'title' => 'required|string|max:255',
            'description' => 'required|string|max:1000',
            'donation_link' => 'required|url|max:255',

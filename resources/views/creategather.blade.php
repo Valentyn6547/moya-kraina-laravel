@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('createGather') }}" method="post" enctype="multipart/form-data">
+    <form class="form-update-data" action="{{ route('createGather') }}" method="post" enctype="multipart/form-data">
         @csrf
     <section class="hero-heading-center-14">
         <div class="container-10">
@@ -70,6 +70,4 @@
         </div>
     </section>
     </form>
-    <script src="{{ asset('js/gather.js') }}"></script>
-
 @stop
