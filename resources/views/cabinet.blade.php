@@ -9,54 +9,58 @@
     <section class="personalinfopart">
         <div class="container-14"></div>
         <div class="personalinfoblock">
-            <div class="ms-list-container">
-                <div class="ms-input-row">
-                    <div class="ms-input-label">Фото</div>
-                    <div data-ms-action="profile-image" class="ms-image is-profile-image"><img
-                            src="images\white-profile-empty-1.svg" loading="lazy" data-ms-member="profile-image" alt="">
-                        <div class="ms-upload">Upload</div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-form">
-                <form id="wf-form-Profile" name="wf-form-Profile" data-name="Profile" method="get"
-                      data-ms-form="profile" class="ms-profile-form" data-wf-page-id="661961d36318c956b6d31104"
-                      data-wf-element-id="5474bbeb-d3f4-5984-8d2d-00aa61a9d33f">
-                    <div class="ms-list-container">
-                        <div class="ms-input-row"><label for="Full-Name" class="ms-input-label">Ім&#x27;я та
-                                прізвище</label><input class="ms-input w-input" maxlength="256" name="Full-Name-2"
-                                                       data-name="Full Name 2" placeholder="e.g. Howard Thurman"
-                                                       type="text" id="Full-Name-2" data-ms-member="name"
-                                                       value="{{ $name }} {{ $surname  }}" required="">
+            <form class="form-update-data" action="{{ route(' updateUserData') }}" method="post">
+                @csrf
+                <div class="ms-list-container">
+                    <div class="ms-input-row">
+                        <div class="ms-input-label">Фото</div>
+                        <div data-ms-action="profile-image" class="ms-image is-profile-image"><img
+                                src="images\white-profile-empty-1.svg" loading="lazy" data-ms-member="profile-image"
+                                alt="">
+                            <div class="ms-upload">Upload</div>
                         </div>
-                        <div class="ms-input-row"><label for="Email" class="ms-input-label">Пошта</label><input
-                                class="ms-input w-input" maxlength="256" name="Email" data-name="Email"
-                                placeholder="e.g. howard.thurman@gmail.com" type="email" id="Email"
-                                data-ms-member="email" value="{{ $email }}" required=""></div>
-{{--                        <div class="ms-input-row"><label for="Phone" class="ms-input-label">Телефон</label><input--}}
-{{--                                class="ms-input w-input" maxlength="256" name="Phone" data-name="Phone"--}}
-{{--                                placeholder="e.g. 123-456-7890" type="tel" id="Phone" data-ms-member="phone"--}}
-{{--                                required=""></div>--}}
-{{--                        <div class="ms-input-row"><label for="DOB" class="ms-input-label">Дата народження</label><input--}}
-{{--                                class="ms-input w-input" maxlength="256" name="DOB" data-name="DOB"--}}
-{{--                                placeholder="e.g. 01/01/1991" type="text" id="DOB" data-ms-member="dob" required="">--}}
-{{--                        </div>--}}
-                        <div class="ms-input-row is-last"><label for="Occupation"
-                                                                 class="ms-input-label">Місто</label><input
-                                class="ms-input w-input" maxlength="256" name="Occupation" data-name="Occupation"
-                                placeholder="e.g. Lviv" type="text" id="Occupation" data-ms-member="Occupation"
-                                value="{{ $city }}"
-                                required=""></div>
                     </div>
-                    <input type="submit" data-wait="Please wait..." class="ms-button w-button" value="Оновити дані">
-                </form>
-                <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
                 </div>
-                <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form.</div>
+                <div class="w-form">
+                    <form id="wf-form-Profile" name="wf-form-Profile" data-name="Profile" method="get"
+                          data-ms-form="profile" class="ms-profile-form" data-wf-page-id="661961d36318c956b6d31104"
+                          data-wf-element-id="5474bbeb-d3f4-5984-8d2d-00aa61a9d33f">
+                        <div class="ms-list-container">
+                            <div class="ms-input-row"><label for="Full-Name" class="ms-input-label">Ім&#x27;я та
+                                    прізвище</label><input name="full-name" class="ms-input w-input" maxlength="256" name="Full-Name-2"
+                                                           data-name="Full Name 2" placeholder="e.g. Howard Thurman"
+                                                           type="text" id="Full-Name-2" data-ms-member="name"
+                                                           value="{{ $name }} {{ $surname  }}" required="">
+                            </div>
+                            <div class="ms-input-row"><label for="Email" class="ms-input-label">Пошта</label><input
+                                    class="ms-input w-input" maxlength="256" name="Email" data-name="Email"
+                                    placeholder="e.g. howard.thurman@gmail.com" type="email" id="Email"
+                                    data-ms-member="email" value="{{ $email }}" required="" readonly></div>
+                            {{--                        <div class="ms-input-row"><label for="Phone" class="ms-input-label">Телефон</label><input--}}
+                            {{--                                class="ms-input w-input" maxlength="256" name="Phone" data-name="Phone"--}}
+                            {{--                                placeholder="e.g. 123-456-7890" type="tel" id="Phone" data-ms-member="phone"--}}
+                            {{--                                required=""></div>--}}
+                            {{--                        <div class="ms-input-row"><label for="DOB" class="ms-input-label">Дата народження</label><input--}}
+                            {{--                                class="ms-input w-input" maxlength="256" name="DOB" data-name="DOB"--}}
+                            {{--                                placeholder="e.g. 01/01/1991" type="text" id="DOB" data-ms-member="dob" required="">--}}
+                            {{--                        </div>--}}
+                            <div class="ms-input-row is-last"><label for="Occupation"
+                                                                     class="ms-input-label">Місто</label><input
+                                    class="ms-input w-input" maxlength="256" name="city" data-name="Occupation"
+                                    placeholder="e.g. Lviv" type="text" id="Occupation" data-ms-member="Occupation"
+                                    value="{{ $city }}"
+                                    required=""></div>
+                        </div>
+                        <input type="submit" data-wait="Please wait..." class="ms-button w-button" value="Оновити дані">
+                    </form>
+                    <div class="w-form-done">
+                        <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="statisticblock">
             <div class="w-form">
@@ -95,9 +99,9 @@
         <div class="container-8">
             <h1 class="gathersofminetext margin-bottom-32px">Мої збори</h1>
         </div>
-{{--        <a href="#" class="allgathersbutton w-button">Всі збори</a>--}}
-{{--        <a href="#" class="donatedbutton w-button">Задонатив(ла)</a>--}}
-{{--        <a href="#" class="mygathersbutton w-button">Мої збори</a>--}}
+        {{--        <a href="#" class="allgathersbutton w-button">Всі збори</a>--}}
+        {{--        <a href="#" class="donatedbutton w-button">Задонатив(ла)</a>--}}
+        {{--        <a href="#" class="mygathersbutton w-button">Мої збори</a>--}}
         <a data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d8" href="/create-gather"
            class="creategather w-inline-block">
             <div data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d9" style="color:rgb(0,0,0)" class="button2-text">Створити
