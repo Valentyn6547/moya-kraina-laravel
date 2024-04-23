@@ -43,6 +43,7 @@ Route::post('/login', [Login::class, 'login']);
 //Cabinet
 Route::get('/cabinet', [Cabinet::class, 'run']);
 Route::get('/create-gather', [Gathers::class, 'createGather']);
+Route::post('/update-user-data', [Cabinet::class, 'updateUserData'])->name(' updateUserData');
 
 
 //other

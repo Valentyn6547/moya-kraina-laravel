@@ -30,7 +30,32 @@ class Cabinet extends Controller
     }
 
 
-    function updateUserData(){
+    function updateUserData(Request $request){
 
+        if(!Session::get('autorizated')) {
+            return response()->json(['error' => 'User not logined'], 404);}
+
+
+        $validatedData = $request->validate([
+            'full-name' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+        ]);
+
+        if(strpos($validatedData['full-name'], ' ') !== false){
+            $user_id = Session::get('user_id');
+            $fullName = explode(' ', $validatedData['full-name']);
+
+            // Create a new user with the validated data
+            $user = User::where('user_id', $user_id)->first();
+            $user->name = $fullName[0];
+            $user->surname = $fullName[1];
+            $user->city = $validatedData['city'];
+            $user->save();
+        }else{
+            return response()->json(['error' => 'Please enter surname with space!']);
+        }
+
+
+        return true;
     }
 }
