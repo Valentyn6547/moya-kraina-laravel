@@ -34,7 +34,7 @@ class RegisterSubmit extends Controller
         $request->session()->regenerate();
 
 
-        Session::put('user_id', $user->id);
+        Session::put('user_id', $user->user_id);
         Session::put('user_email', $user->email);
         Session::put('user_type', VOLUNTEER);
         Session::put('autorizated', true);
