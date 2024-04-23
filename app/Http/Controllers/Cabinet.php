@@ -10,9 +10,12 @@ use App\Models\User;
 class Cabinet extends Controller
 {
     function run(){
-        if(Session::get('user_type') == 'volunteer' && Session::get('autorizated')){
-            $user = User::where('user_id','=',  Session::get('user_id'),)->first();
+        $user_id = Session::get('user_id');
+        $user = User::where('user_id', $user_id)->first();
+  
 
+        if(Session::get('user_type') == 'volunteer' && Session::get('autorizated') && $user){
+           
             $user_data = [
                 'name' => $user->name,
                 'surname' => $user->surname,
@@ -21,6 +24,7 @@ class Cabinet extends Controller
                 'city' => $user->city,
                 'user_type' => $user->user_type
             ];
+          
 
             return view('cabinet', $user_data);
         }else{
