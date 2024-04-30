@@ -10,6 +10,7 @@ use App\Http\Controllers\Contacts;
 use App\Http\Controllers\Cabinet;
 use App\Http\Controllers\Initiations;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\ResetPassword;
 // use App\Http\Controllers\ImageUploadController;
 
 /*
@@ -51,6 +52,9 @@ Route::post('/update-user-data', [Cabinet::class, 'updateUserData'])->name('upda
 Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('createGatherPost');
 
 
+//Reset Password
+Route::get('/reset-password', [ResetPassword::class, 'showResetForm'])->name('password.request');
+Route::post('/password/email', [ResetPasswordController::class, 'reset'])->name('password.email');
 
 
 
