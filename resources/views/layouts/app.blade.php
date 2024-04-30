@@ -97,7 +97,7 @@
   <script src="/js/webflow.js" type="text/javascript"></script>
   <script src="{{ asset('js/dist/js/simple-notif.js') }}"></script>
   <script src="{{ asset('js/global.js') }}"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
-  <link href="/css/bootstrap.css" rel="stylesheet">
+  <script src="/js/jquery.cosyAlert.min.js"></script>
+  <link href="/css/jquery.cosyAlert.css" rel="stylesheet">
 </body>
 </html>

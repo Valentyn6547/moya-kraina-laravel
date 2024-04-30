@@ -62,8 +62,7 @@
                                                                                                      data-name="status"
                                                                                                      class="select-field w-select">
                         <option value="active">Активний</option>
-                        <option value="inactive">Закритий</option>
-                        <option value="closed">Призупинений</option>
+                        <option value="inactive">Неактивний</option>
                     </select>
                     <div class="w-form-done">
                         <div>Thank you! Your submission has been received!</div>

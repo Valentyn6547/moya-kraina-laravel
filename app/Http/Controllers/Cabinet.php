@@ -17,13 +17,17 @@ class Cabinet extends Controller
 
         if(Session::get('user_type') == 'volunteer' && Session::get('autorizated') && $user){
 
+            $gathers = Gathers::where('user_id', $user_id)->get();
+
+
             $user_data = [
                 'name' => $user->name,
                 'surname' => $user->surname,
                 'email' => $user->email,
                 'isverefied' => $user->isverefied,
                 'city' => $user->city,
-                'user_type' => $user->user_type
+                'user_type' => $user->user_type,
+                'gathers' => $gathers
             ];
 
 
