@@ -18,12 +18,9 @@ return new class extends Migration
             $table->string('description');
             $table->string('donation_link');
             $table->date('publish_date');
-            $table->string('image_path')->nullable(); 
-            $table->decimal('goal_amount', 10, 2); 
-            $table->enum('status', ['active', 'inactive']); 
             $table->timestamps();
 
-            
+
             $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
