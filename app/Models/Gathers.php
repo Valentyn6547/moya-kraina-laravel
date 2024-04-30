@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Gathers extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'gather_id';
 }
