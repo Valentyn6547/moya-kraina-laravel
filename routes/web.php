@@ -48,7 +48,7 @@ Route::post('/update-user-data', [Cabinet::class, 'updateUserData'])->name(' upd
 
 //other
 //Route::post('/upload', [ImageUploadController::class, 'uploadImg'])->name('uploadImg');
-Route::post('/createGather', [Gathers::class, 'createGatherPost'])->name('createGather');
+Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('createGatherPost');
 
 
 
