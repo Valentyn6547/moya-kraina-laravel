@@ -18,19 +18,38 @@ $(function() {
             dataType: 'json',
             success: function(result) {
                 if (result.error !== undefined) {
-                    fireNotif(result.error, 'error', 2000);
-                }else{
-                    fireNotif('Saved!','success', 2000);
+                    cosyAlert(result.error, 'error', { autoHideTime: 2000 });
+                } else {
+                    cosyAlert('Saved!', 'success', { autoHideTime: 2000 });
                 }
             },
             error: function(result) {
-                if (result.error !== undefined) {
-                    fireNotif(result.error, 'error', 2000);
-                }else{
-                    fireNotif('Error!', 'error', 2000);
-                }
+                result = JSON.parse(result.responseText);
+                cosyAlert(parseError(result), 'error', { autoHideTime: 2000 });
             }
 
         });
     });
 });
+
+
+
+function parseError(response) {
+    const errorMessage = response.message;
+    const errors = response.errors;
+
+    let string = ``;
+    // Loop through each error field
+    for (const field in errors) {
+        const fieldErrors = errors[field];
+
+        // Loop through each error message for the field
+        for (const error of fieldErrors) {
+            if (error != '') {
+                string = string + `<p style="color:white;"> - ${error} </p>`;
+            }
+        }
+    }
+
+    return string;
+}

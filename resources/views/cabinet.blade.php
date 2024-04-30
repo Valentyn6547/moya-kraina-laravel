@@ -113,12 +113,13 @@
         </a>
     </section>
     <section class="userpage-gathers">
+        @foreach ($gathers as $gather)
         <div class="gathersblock">
-            <div class="hashtags">#Їжа #mono-банка #Закритий</div>
-            <div class="gathername">Назва збору</div>
-            <div class="gathergoal">Мета збору: ___ грн<br></div>
-            <div class="earnedmoneytext">Вже зібрали ___ грн</div>
-            <div class="dividerline">---------------------------------------------------------</div>
+            {{-- <div class="hashtags">#Їжа #mono-банка #Закритий</div> --}}
+            <div class="gathername">{{$gather['title']}}</div>
+            <div class="gathergoal">Мета збору:{{$gather['goal_amount']}} грн<br></div>
+            <div class="earnedmoneytext">{{$gather['description']}}</div>
+            {{-- <div class="dividerline">---------------------------------------------------------</div> --}}
             <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color:rgb(230,230,230)"
                href="gatherexample.html" class="moreaboutgather w-inline-block">
                 <div
@@ -136,6 +137,8 @@
                     class="right-line"></div>
             </a>
         </div>
+        @endforeach
+ 
     </section>
     <section class="initiationsheaderpart">
         <div class="container-9"></div>
