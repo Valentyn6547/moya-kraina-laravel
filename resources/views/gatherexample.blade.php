@@ -12,17 +12,6 @@
     <div data-collapse="medium" data-animation="default" data-duration="300" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
       <div class="padding-global">
         <div class="nav_container">
-          <div class="text-block">VOLONTER.KA</div>
-          <a href="#" class="nav_logo-link w-nav-brand"></a>
-          <nav role="navigation" class="nav_menu w-nav-menu">
-            <div class="nav_link-list">
-              <a href="index.html" class="nav_link w-nav-link">Головна</a>
-              <a href="gathers.html" class="nav_link w-nav-link">Збори</a>
-              <a href="initiations.html" class="nav_link w-nav-link">Ініціативи</a>
-              <a href="sign-up.html" class="nav_link w-nav-link">Реєстрація</a>
-              <a href="contact.html" class="nav_link w-nav-link">Контакти</a>
-            </div>
-          </nav>
           <div class="nav_menu-button w-nav-button">
             <div class="nav_menu-button-icon w-embed"><svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 16H27" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>

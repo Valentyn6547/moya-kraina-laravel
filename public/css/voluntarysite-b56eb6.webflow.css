@@ -2663,7 +2663,7 @@ figcaption {
     margin-bottom: 4px;
     margin-left: 185px;
     margin-right: -151px;
-    font-family: Oswald, sans-serif;
+    font-family: Lato, sans-serif;
     display: inline-block;
     position: relative;
 }
@@ -3955,7 +3955,7 @@ figcaption {
 .init-initiationsheader {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
-    margin-top: -54px;
+    margin-top: -5px;
     padding: 0 30px 18px;
     position: relative;
 }
@@ -10053,24 +10053,6 @@ figcaption {
     right: 0%;
 }
 
-.button-3 {
-    outline-offset: 0px;
-    color: var(--text-primary);
-    -webkit-text-fill-color: inherit;
-    background-color: #fafafa;
-    background-clip: border-box;
-    border-radius: 20px;
-    outline: 3px solid #817c4d;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 4px;
-    margin-left: 185px;
-    margin-right: -151px;
-    font-family: Oswald, sans-serif;
-    display: inline-block;
-    position: relative;
-}
-
 .container-1 {
     aspect-ratio: auto;
     justify-content: flex-start;
@@ -11336,14 +11318,6 @@ figcaption {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
     padding: 80px 30px;
-    position: relative;
-}
-
-.init-initiationsheader {
-    background-color: #fff;
-    border-bottom: 1px solid #e4ebf3;
-    margin-top: -54px;
-    padding: 0 30px 18px;
     position: relative;
 }
 
@@ -12998,8 +12972,6 @@ figcaption {
     left: 70%;
     overflow: hidden;
 }
-
-
 
 .button2-reveal-copy {
     z-index: 0;
