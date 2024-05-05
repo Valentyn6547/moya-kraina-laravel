@@ -5385,64 +5385,12 @@ figcaption {
     overflow: hidden;
 }
 
-.top-line {
-    perspective-origin: 0%;
-    transform-origin: 0%;
-    background-color: #000;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    top: 0%;
-    bottom: auto;
-    left: 0%;
-    right: auto;
-}
-
 .button3-text-2 {
     z-index: 1;
     text-align: center;
     text-transform: none;
     font-family: Lato, sans-serif;
     position: relative;
-}
-
-.bottom-line {
-    perspective-origin: 100%;
-    transform-origin: 100%;
-    background-color: #000;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    top: auto;
-    bottom: 0%;
-    left: 0%;
-    right: auto;
-}
-
-.left-line {
-    perspective-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    background-color: #000;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    bottom: auto;
-    left: 0%;
-    right: auto;
-}
-
-.right-line {
-    perspective-origin: 50% 0;
-    transform-origin: 50% 0;
-    background-color: #000;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    bottom: auto;
-    left: auto;
-    right: 0%;
 }
 
 .moreaboutgather {
@@ -10779,14 +10727,6 @@ figcaption {
     left: 40px;
 }
 
-.moreaboutgatherbutton {
-    background-color: #000;
-    border-radius: 20px;
-    position: relative;
-    top: 71px;
-    left: 59px;
-}
-
 .gathersblock {
     opacity: 1;
     outline-offset: 0px;
@@ -11302,7 +11242,7 @@ figcaption {
 .gather-gatherheader {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
-    padding: 200px 30px 18px;
+    padding: 0px 30px 18px;
     position: relative;
 }
 
@@ -12648,25 +12588,40 @@ figcaption {
 
 @media screen and (max-width: 1440px) {
     .homebuttons {
-        margin-left: 10px; /* Відступ для екранів з розміром до 1440px */
+        width: 150px;
+        max-width: 1440px;
+        height: 50px;
+        margin-left: 100px;
+        display: block;
     }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1680px) {
     .homebuttons {
-        margin-left: 15px; /* Відступ для екранів з розміром від 1440px до 1680px */
+        width: 150px;
+        max-width: 1440px;
+        height: 50px;
+        display: block;
     }
 }
 
 @media screen and (min-width: 1680px) and (max-width: 1920px) {
     .homebuttons {
-        margin-left: 215px; /* Відступ для екранів з розміром від 1680px до 1920px */
+        width: 150px;
+        max-width: 1440px;
+        height: 50px;
+        margin-left: 210px;
+        display: block;
     }
 }
 
 @media screen and (min-width: 1920px) {
     .homebuttons {
-        margin-left: 320px; /* Відступ для екранів з розміром більше 1920px */
+        width: 150px;
+        max-width: 1440px;
+        height: 50px;
+        margin-left: 310px;
+        display: block;
     }
 }
 
@@ -12814,65 +12769,6 @@ figcaption {
     text-transform: none;
     font-family: Lato, sans-serif;
     position: relative;
-}
-
-.bottom-line {
-    perspective-origin: 100%;
-    transform-origin: 100%;
-    background-color: #000;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    top: auto;
-    bottom: 0%;
-    left: 0%;
-    right: auto;
-}
-
-.left-line {
-    perspective-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    background-color: #000;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    bottom: auto;
-    left: 0%;
-    right: auto;
-}
-
-.right-line {
-    perspective-origin: 50% 0;
-    transform-origin: 50% 0;
-    background-color: #000;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    bottom: auto;
-    left: auto;
-    right: 0%;
-}
-
-.moreaboutgather {
-    z-index: 1;
-    color: #000;
-    cursor: pointer;
-    background-color: #fff;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 55px;
-    font-family: Lato, sans-serif;
-    text-decoration: none;
-    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: flex;
-    position: relative;
-    top: 63px;
-    left: 58px;
-    overflow: hidden;
 }
 
 .moreaboutinitiation {
@@ -13272,7 +13168,7 @@ figcaption {
     }
 
     .contact_header_details-wrapper {
-        margin-top: -28vw;
+        margin-top: -34vw;
     }
 
     .additionaluserinfotextblock {
@@ -13357,6 +13253,22 @@ figcaption {
     .button-5 {
         margin-left: 20vw;
     }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+}
+
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    .contact_header_details-wrapper {
+        margin-top: auto;
+        margin-left: 100vw;
+        position: relative;
+        top: -300px;
+        left: -653px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
 }
 
 @media screen and (min-width: 1920px) {
@@ -15249,4 +15161,206 @@ figcaption {
     .resetpasswordbutton {
         left: 1094px;
     }
+}
+
+.home-makeinitiationbutton {
+    width: 200px;
+    height: 80px;
+    margin-left: 64px;
+}
+
+.initbutton {
+    z-index: 1;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url("../images/location.png");
+    background-position: 95%;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 55px;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+}
+
+.initbutton:hover {
+    transform: translate(12px, 12px);
+}
+
+.donatebuttontext {
+    z-index: 1;
+    text-align: center;
+    text-transform: none;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    position: relative;
+    left: -15px;
+}
+
+.button3-background {
+    z-index: 0;
+    color: #000;
+    background-color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 200px;
+    height: 55px;
+    margin-top: 12px;
+    margin-left: 12px;
+    text-decoration: none;
+    position: absolute;
+    overflow: hidden;
+}
+
+.home-donate {
+    margin-top: -80px;
+    margin-left: 355px;
+}
+
+.donatebutt {
+    z-index: 1;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url("../images/donate.png");
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 55px;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+}
+
+.donatebutt:hover {
+    transform: translate(12px, 12px);
+}
+
+.makeinitiationbuttontext {
+    z-index: 1;
+    text-align: center;
+    text-transform: none;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    position: relative;
+    left: -15px;
+}
+
+.bottom-line {
+    perspective-origin: 100%;
+    transform-origin: 100%;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: auto;
+}
+
+.left-line {
+    perspective-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    background-color: #000;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+}
+
+.right-line {
+    perspective-origin: 50% 0;
+    transform-origin: 50% 0;
+    background-color: #000;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
+}
+
+.bottom-line.g {
+    perspective-origin: 100%;
+    transform-origin: 100%;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: auto;
+    transform: scaleX(0); /* Зміна масштабу відсутній */
+    transition: transform 0.3s ease; /* Анімація масштабу */
+}
+
+.left-line.g {
+    perspective-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    background-color: #000;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+    transform: scaleY(1); /* Зміна масштабу відсутній */
+    transition: transform 0.3s ease; /* Анімація масштабу */
+}
+
+.right-line.g {
+    perspective-origin: 50% 0;
+    transform-origin: 50% 0;
+    background-color: #000;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
+    transform: scaleY(1); /* Зміна масштабу відсутній */
+    transition: transform 0.3s ease; /* Анімація масштабу */
+}
+
+.top-line.g {
+    perspective-origin: 0%;
+    transform-origin: 0%;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+    transform: scaleX(0); /* Зміна масштабу відсутній */
+    transition: transform 0.3s ease; /* Анімація масштабу */
+}
+
+.moreaboutgather:hover .bottom-line.g,
+.moreaboutgather:hover .top-line.g {
+    transform: scaleX(1); /* Зміна масштабу при наведенні */
 }
