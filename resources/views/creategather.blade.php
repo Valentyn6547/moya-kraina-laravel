@@ -1,30 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="form-update-data" action="{{ route('createGatherPost') }}" method="post" enctype="multipart/form-data">
+    <form class="form-create-gather" action="{{ route('createGatherPost') }}" data-method='serialize' method="post" enctype="multipart/form-data">
         @csrf
         <section class="hero-heading-center-14">
             <div class="container-10">
                 <h1 class="centered-heading-6 margin-bottom-32px">Створення збору</h1>
             </div>
         </section>
-        {{--    <section class="hero-heading-center-20">--}}
-        {{--        <div class="container-10">--}}
-        {{--            <img src="images/pictures.png" loading="lazy" width="58" alt=""--}}
-        {{--                 class="addwraper" style="margin-left: 70px;">--}}
-        {{--            <div class="container-13">--}}
-        {{--                <h1 class="centered-heading-9 margin-bottom-32px">Додати обкладинку</h1>--}}
-
-        {{--                <label for="avatar">Choose a profile picture:</label>--}}
-        {{--              --}}
-        {{--                    @csrf--}}
-        {{--                    <input type="file" id="avatar" name="image" src="{{ asset('storage/' . session('path')) }}" accept="image/png, image/jpeg" />--}}
-        {{--          --}}
-
-
-        {{--            </div>--}}
-        {{--        </div>--}}
-        {{--    </section>--}}
+        <section class="hero-heading-center-20">
+            <div class="container-10">
+                <img src="images/pictures.png" loading="lazy" width="58" alt="" class="addwraper" style="margin-left: 70px;">
+                <div class="container-13">
+                    <h1 class="centered-heading-9 margin-bottom-32px">Додати обкладинку</h1>
+        
+                    <label for="avatar">Choose a profile picture:</label>
+        
+                    <input type="file" id="avatar" name="image">
+                </div>
+            </div>
+        </section>
         <section class="hero-heading-center-15">
             <div class="form-block-copy w-form">
                 <textarea placeholder="Опис збору" maxlength="5000" id="field" name="description" data-name="Field"
@@ -74,4 +69,5 @@
             </div>
         </section>
     </form>
+    <script src="{{ asset('js/gather.js') }}"></script>
 @stop

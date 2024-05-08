@@ -63,7 +63,7 @@ Route::get('/create-initiation', [CreateInitiation::class, 'create'])->name('cre
 
 // GatherExample
 Route::get('/gather-example', [gatherExample::class, 'run'])->name('gatherExample');
-
+Route::get('/gather/{id}', [gatherExample::class, 'gather_detail']);
 
 
 

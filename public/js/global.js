@@ -3,18 +3,14 @@ $(function() {
 
         e.preventDefault();
 
-        let $data;
-
-        if ($(this).attr('data-method') == 'serialize') {
-            $data = $(this).serialize();
-        } else {
-            $data = $(this).serializeArray();
-        }
+        const data = new FormData(this);
 
         $.ajax({
             url: $(this).attr('action'),
             type: 'post',
-            data: $data,
+            data: data,
+            contentType: false, // Let jQuery handle the content type
+            processData: false, // Don't process the data
             dataType: 'json',
             success: function(result) {
                 if (result.error !== undefined) {
