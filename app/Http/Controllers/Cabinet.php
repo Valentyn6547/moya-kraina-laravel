@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Gathers;
+use Illuminate\Support\Facades\Storage;
 
 class Cabinet extends Controller
 {
@@ -72,6 +73,7 @@ class Cabinet extends Controller
     function createGatherPost(Request $request){
 
         $user_id = Session::get('user_id');
+    
 
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
@@ -80,7 +82,13 @@ class Cabinet extends Controller
             'publish_date' => 'required|date',
             'goal_amount' => 'required|numeric',
             'status' => 'required|in:active,inactive,closed',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+ 
+
+
+       
+       
 
         $gather = new Gathers();
         $gather->user_id = $user_id;
@@ -90,6 +98,20 @@ class Cabinet extends Controller
         $gather->publish_date = $validatedData['publish_date'];
         $gather->goal_amount = $validatedData['goal_amount'];
         $gather->status = $validatedData['status'];
+
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->image->store('images', 'public');
+            
+            // Get the full URL of the stored image
+            $imageUrl = Storage::url($imagePath);
+        
+        
+            $gather->image_path = $imageUrl;
+        }
+       
+
+        
         $gather->save();
 
         return true;

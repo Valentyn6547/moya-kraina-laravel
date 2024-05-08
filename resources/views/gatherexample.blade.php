@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="hero-heading-center-18">
+<section class="hero-heading-center-18" style="background-image: url({{$gather['image_path']}})">
     <div class="container-12">
-      <h1 class="gatherheader margin-bottom-32px">Назва збору</h1>
+      <h1 class="gatherheader margin-bottom-32px">{{$gather['title']}}</h1>
     </div>
-    <h1 class="heading-16-copy">Мета збору:</h1>
-    <div class="alreadyearned">На даний момент зібрано: </div>
-    <div class="enddategather">Дата закінчення збору:</div>
+    <div class="alreadyearned">На даний момент зібрано: 0</div>
+    <div class="enddategather">Дата закінчення збору: 0</div>
     <a href="#" class="dodonationbutton w-button">        Задонатити    </a>
     <div data-collapse="medium" data-animation="default" data-duration="300" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
       <div class="padding-global">
@@ -24,10 +23,9 @@
     </div>
   </section>
   <section class="hero-heading-center-19">
-    <div class="hashtags1">hashtag1 hashtag2 hashtag3</div>
-    <h1 class="heading-17-copy">Name Surname</h1><img src="/images/Особистий-кабінет.png" loading="lazy" width="105" sizes="105px" alt="" srcset="images/Особистий-кабінет-p-500.png 500w, images/Особистий-кабінет.png 512w" class="userpicture">
+    {{-- <h1 class="heading-17-copy">Name Surname</h1><img src="/images/Особистий-кабінет.png" loading="lazy" width="105" sizes="105px" alt="" srcset="images/Особистий-кабінет-p-500.png 500w, images/Особистий-кабінет.png 512w" class="userpicture"> --}}
     <div class="gatherdescription">
-      <h1 class="gatheridesc">initiationDescription</h1>
+      <h1 class="gatheridesc">{{$gather['description']}}</h1>
     </div>
   </section>
 @stop

@@ -101,7 +101,7 @@
       </a>
     </div>
   </section>
-  <section class="home-initiationsheader">
+  {{-- <section class="home-initiationsheader">
     <div class="container-9">
       <h1 class="centered-heading-5 margin-bottom-32px">Рекомендовані ініціативи</h1>
     </div>
@@ -146,7 +146,7 @@
       <div class="locationtext">Локація</div>
       <div class="locationtext">Локація</div>
     </div>
-  </section>
+  </section> --}}
   <section class="hero-heading-center-12-home">
     <div class="container-9">
       <h1 class="centered-heading-5 margin-bottom-32px">Маєте запитання, скаргу чи пропозицію ? </h1>

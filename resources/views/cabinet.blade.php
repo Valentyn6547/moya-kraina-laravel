@@ -121,7 +121,7 @@
             <div class="earnedmoneytext">{{$gather['description']}}</div>
             {{-- <div class="dividerline">---------------------------------------------------------</div> --}}
             <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color:rgb(230,230,230)"
-   href="{{ route('gatherExample') }}" class="moreaboutgather w-inline-block">
+   href="/gather/{{$gather['gather_id']}}" class="moreaboutgather w-inline-block">
     <div
         style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
         class="top-line"></div>
