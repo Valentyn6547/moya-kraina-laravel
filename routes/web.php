@@ -56,7 +56,9 @@ Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('create
 
 //Reset Password
 Route::get('/reset-password', [ResetPassword::class, 'showResetForm'])->name('password.request');
-Route::post('/password/email', [ResetPasswordController::class, 'reset'])->name('password.email');
+Route::post('/password/email', [ResetPassword::class, 'reset'])->name('password.email');
+
+Route::post('/reset-password', [ResetPassword::class, 'reset'])->name('password.reset');
 
 // Initiations
 Route::get('/create-initiation', [CreateInitiation::class, 'create'])->name('createInitiation');
