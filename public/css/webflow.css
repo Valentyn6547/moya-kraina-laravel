@@ -2115,3 +2115,14 @@ textarea.w-select {
 .header-top-margin {
     height: 15vh;
 }
+
+.gathers_selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.gather_img {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
