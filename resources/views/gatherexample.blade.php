@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="hero-heading-center-18" style="background-image: url({{$gather['image_path']}})">
+<section class="hero-heading-center-18 gather_big_img" style="background-image: url({{$gather['image_path']}})">
     <div class="container-12">
       <h1 class="gatherheader margin-bottom-32px">{{$gather['title']}}</h1>
     </div>
-    <div class="alreadyearned">На даний момент зібрано: 0</div>
-    <div class="enddategather">Дата закінчення збору: 0</div>
-    <a href="#" class="dodonationbutton w-button">        Задонатити    </a>
+    <div class="enddategather">Дата закінчення збору: {{$gather['publish_date']}}</div>
+    <a href="{{$gather['donation_link']}}" target="_blank" class="dodonationbutton w-button">        Задонатити    </a>
     <div data-collapse="medium" data-animation="default" data-duration="300" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
       <div class="padding-global">
         <div class="nav_container">

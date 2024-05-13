@@ -73,7 +73,52 @@ class Cabinet extends Controller
     function createGatherPost(Request $request){
 
         $user_id = Session::get('user_id');
+
     
+    
+
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'string',
+            'donation_link' => 'required|url',
+            'publish_date' => 'required|date',
+            'goal_amount' => 'required|numeric',
+            'status' => 'required|in:active,inactive,closed',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+ 
+
+        $gather = new Gathers();
+        $gather->user_id = $user_id;
+        $gather->title = $validatedData['title'];
+        $gather->description = $validatedData['description'];
+        $gather->donation_link = $validatedData['donation_link'];
+        $gather->publish_date = $validatedData['publish_date'];
+        $gather->goal_amount = $validatedData['goal_amount'];
+        $gather->status = $validatedData['status'];
+
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->image->store('images', 'public');
+            // Get the full URL of the stored image
+            $imageUrl = Storage::url($imagePath);
+            $gather->image_path = $imageUrl;
+        }
+       
+        $gather->save();
+
+        
+        if ($request->has('hashTags')) {
+            
+        }
+
+        return true;
+    }
+
+    function updateGatherPost(Request $request){
+
+        $user_id = Session::get('user_id');
+        if(empty($user_id)){return false;}
 
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
@@ -90,7 +135,8 @@ class Cabinet extends Controller
        
        
 
-        $gather = new Gathers();
+        $gather = Gathers::where('user_id', $user_id)
+                        ->where('gather_id', $validatedData['gather_id'])->get();
         $gather->user_id = $user_id;
         $gather->title = $validatedData['title'];
         $gather->description = $validatedData['description'];
@@ -105,14 +151,11 @@ class Cabinet extends Controller
             
             // Get the full URL of the stored image
             $imageUrl = Storage::url($imagePath);
-        
-        
             $gather->image_path = $imageUrl;
         }
        
-
-        
         $gather->save();
+
 
         return true;
     }

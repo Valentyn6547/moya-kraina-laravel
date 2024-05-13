@@ -112,9 +112,12 @@
                  class="button2-reveal"></div>
         </a>
     </section>
-    <section class="userpage-gathers">
+    <section class="gathers_selection userpage-gathers">
         @foreach ($gathers as $gather)
         <div class="gathersblock">
+            @if(!empty($gather['image_path']))
+                <div class="gather_img" style="background-image: url({{$gather['image_path']}});"></div>
+            @endif
             {{-- <div class="hashtags">#Їжа #mono-банка #Закритий</div> --}}
             <div class="gathername">{{$gather['title']}}</div>
             <div class="gathergoal">Мета збору:{{$gather['goal_amount']}} грн<br></div>
@@ -141,7 +144,7 @@
         @endforeach
  
     </section>
-    <section class="initiationsheaderpart">
+    {{-- <section class="initiationsheaderpart">
         <div class="container-9"></div>
         <h1 class="initiationsofminetext margin-bottom-32px">Ініціативи, що стосуються мене</h1>
         <a href="#" class="allinitiationsbutton w-button">Всі ініціативи</a>
@@ -195,5 +198,5 @@
             <div class="locationtext">Локація</div>
             <div class="locationtext">Локація</div>
         </div>
-    </section>
+    </section> --}}
 @stop

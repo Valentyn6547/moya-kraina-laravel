@@ -43,15 +43,16 @@
                     <input
                         class="text-field-4 w-input" maxlength="256" name="goal_amount" data-name="moneyGoal"
                         placeholder="Грошова ціль" type="text" id="moneyGoal" required="">
-                    <input
+                        <label for="endDate">Дата закінчення збору</label>
+                        <input
                         class="text-field-5 w-input" maxlength="256" name="publish_date" data-name="endDate"
                         placeholder="Дата закінчення збору" type="date" id="endDate" required="">
                     <input
                         class="text-field-6 w-input" maxlength="256" name="donation_link" data-name="details"
                         placeholder="Посилання на реквізити " type="text" id="details" required="">
-{{--                    <input--}}
-{{--                        class="text-field-7 w-input" maxlength="256" name="hashTags" data-name="hashTags"--}}
-{{--                        placeholder="Додайте хеш-теги" type="text" id="hashTags" required="">--}}
+                        <input
+                       class="text-field-7 w-input" maxlength="256" name="hashTags" data-name="hashTags"
+                       placeholder="Додайте хеш-теги" type="text" id="hashTags" required="">
                     <select id="status"
                                                                                                      name="status"
                                                                                                      data-name="status"
@@ -69,5 +70,4 @@
             </div>
         </section>
     </form>
-    <script src="{{ asset('js/gather.js') }}"></script>
 @stop
