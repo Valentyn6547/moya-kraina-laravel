@@ -13,6 +13,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\CreateInitiation;
 use App\Http\Controllers\gatherExample;
+use App\Http\Controllers\ResetPasswordController;
 // use App\Http\Controllers\ImageUploadController;
 
 /*
@@ -57,7 +58,13 @@ Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('create
 
 //Reset Password
 Route::get('/reset-password', [ResetPassword::class, 'showResetForm'])->name('password.request');
-Route::post('/password/email', [ResetPasswordController::class, 'reset'])->name('password.email');
+Route::post('/password/email', [ResetPassword::class, 'reset'])->name('password.email');
+
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.reset');
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.reset');
+Route::post('/password/update', [ResetPasswordController::class, 'store'])->name('password.update');
+
 
 
 // Initiations
