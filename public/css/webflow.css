@@ -2126,3 +2126,9 @@ textarea.w-select {
     background-size: cover;
     background-position: center;
 }
+
+.home_filters_input {
+    border: 0px;
+    border-radius: 20px;
+    padding: 6px;
+}

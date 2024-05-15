@@ -7,10 +7,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Gathers;
-use App\Models\GathersTags;
 use App\Models\GatherTags;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\DB;
 
 class Cabinet extends Controller
 {
@@ -27,11 +26,22 @@ class Cabinet extends Controller
 
             $hashTagsQuery->select('gather_tags.*');
             $hashTagsQuery->join('users', 'users.user_id', '=', 'gathers.user_id');
-            $hashTagsQuery->join('gather_tags', 'gather_tags.gather_tag_id', '=', 'gathers.gather_id');
+            $hashTagsQuery->join('gather_tags', 'gather_tags.gather_id', '=', 'gathers.gather_id');
 
             $hashTags = $hashTagsQuery->get();
 
-            
+            $recordHashTags = array();
+
+            foreach($hashTags as $tag){
+                if(isset($recordHashTags[$tag['gather_id']])){
+                    $temp_array = &$recordHashTags[$tag['gather_id']];
+                    array_push($temp_array,$tag['gather_tag_name']);
+                }else{
+                    $recordHashTags[$tag['gather_id']] = array($tag['gather_tag_name']);
+                }
+            }
+
+       
             $user_data = [
                 'name' => $user->name,
                 'surname' => $user->surname,
@@ -39,7 +49,8 @@ class Cabinet extends Controller
                 'isverefied' => $user->isverefied,
                 'city' => $user->city,
                 'user_type' => $user->user_type,
-                'gathers' => $gathers
+                'gathers' => $gathers,
+                'recordHashTags' => $recordHashTags
             ];
 
             return view('cabinet', $user_data);

@@ -115,13 +115,17 @@
     <section class="gathers_selection userpage-gathers">
         @foreach ($gathers as $gather)
         <div class="gathersblock">
+            <div class="hashtags">
+                @foreach ($recordHashTags[$gather['gather_id']] as $tag)
+                    {{$tag}}
+                @endforeach
+            </div>
             @if(!empty($gather['image_path']))
                 <div class="gather_img" style="background-image: url({{$gather['image_path']}});"></div>
             @endif
-            {{-- <div class="hashtags">#Їжа #mono-банка #Закритий</div> --}}
-            <div class="gathername">{{$gather['title']}}</div>
-            <div class="gathergoal">Мета збору:{{$gather['goal_amount']}} грн<br></div>
-            <div class="earnedmoneytext">{{$gather['description']}}</div>
+            <div class="gathername gather_div_text">{{$gather['title']}}</div>
+            <div class="gathergoal gather_div_text">Мета збору:{{$gather['goal_amount']}} грн<br></div>
+            <div class="earnedmoneytext gather_div_text">{{$gather['description']}}</div>
             {{-- <div class="dividerline">---------------------------------------------------------</div> --}}
             <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color:rgb(230,230,230)"
    href="/gather/{{$gather['gather_id']}}" class="moreaboutgather w-inline-block">

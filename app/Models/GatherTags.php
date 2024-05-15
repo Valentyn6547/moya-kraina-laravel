@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class GatherTags extends Model
 {
     use HasFactory;
-
+    protected $table = 'gather_tags';
     static public $MAX_TAGS = 10;
 }
