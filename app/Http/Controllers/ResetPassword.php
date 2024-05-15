@@ -8,32 +8,23 @@ use Illuminate\Support\Facades\Password;
 
 class ResetPassword extends Controller
 {
-    /**
-     * Показ форми для скидання пароля.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showResetForm()
-    {
-        return view('resetpassword');
-    }
-
-    /**
-     * Обробка запиту на скидання пароля.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+    
     public function reset(Request $request)
     {
-        $request->validate(['email' => 'required|email']);
+        // Validate the form data
+        $credentials = $request->validate([
+            'email' => 'required|email',
+    
+        ]);
 
         $status = Password::sendResetLink(
-            $request->only('email')
+            $request -> only('email')
         );
-
-        return $status == Password::RESET_LINK_SENT
-                    ? back()->with(['status' => __($status)])
-                    : back()->withErrors(['email' => __($status)]);
+        if ($status == Password::RESET_LINK_SENT) {
+            return back()->with('status', trans($status));
+        }
+        return back()->withInput($request->only('email'))
+        ->withErrors(['email' => trans($status)]);
     }
+
 }

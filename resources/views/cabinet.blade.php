@@ -82,11 +82,11 @@
                     <div>Thank you! Your submission has been received!</div>
                 </div>
                 <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form.</div>
+                    <div>Oops! Somethinb g went wrong while submitting the form.</div>
                 </div>
             </div>
         </div>
-        <a href="{{ route('password.request') }}" class="resetpasswordbutton w-inline-block">
+        <a href="{{ route('forget.password') }}" class="resetpasswordbutton w-inline-block">
     <div style="color:rgb(0,0,0)" class="button2-text">
         Відновити пароль
     </div>
