@@ -715,8 +715,7 @@ figcaption {
     -webkit-text-fill-color: inherit;
     mix-blend-mode: normal;
     object-fit: fill;
-    background-image: url("../images/main_photo2.jpg"),
-        url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
+    background-image: url("../images/main_photo2.jpg"), url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
     background-position: 50% 0, 0 0;
     background-repeat: repeat, repeat;
     background-size: cover, auto;
@@ -1055,8 +1054,7 @@ figcaption {
 .cta_component {
     color: #fff;
     text-align: center;
-    background-image: linear-gradient(rgba(11, 7, 6, 0.5), rgba(11, 7, 6, 0.5)),
-        url("../images/cta.jpg");
+    background-image: linear-gradient(rgba(11, 7, 6, 0.5), rgba(11, 7, 6, 0.5)), url("../images/cta.jpg");
     background-position: 0 0, 50%;
     background-size: auto, cover;
     border-radius: 0.5rem;
@@ -2161,11 +2159,7 @@ figcaption {
 .fs-styleguide_spacing {
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
-    background-image: linear-gradient(
-        to top,
-        rgba(190, 243, 192, 0.2),
-        rgba(255, 255, 255, 0)
-    );
+    background-image: linear-gradient( to top, rgba(190, 243, 192, 0.2), rgba(255, 255, 255, 0));
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     grid-auto-columns: 1fr;
@@ -3419,13 +3413,13 @@ figcaption {
 }
 
 .gathersblock {
+    padding: 0px 0px 10px 0px;
     opacity: 1;
     outline-offset: 0px;
     background-color: #fff;
     border-radius: 8px;
     outline: 3px solid #817c4d;
     width: 300px;
-    height: 380px;
     margin-bottom: 40px;
     position: relative;
 }
@@ -4004,8 +3998,7 @@ figcaption {
     background-color: #fff;
     border-radius: 18px;
     font-family: Lato, sans-serif;
-    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-        background-color 0.2s;
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.2s;
     position: relative;
 }
 
@@ -5269,14 +5262,7 @@ figcaption {
 }
 
 .btn-hover-4-colour-slider {
-    background-image: linear-gradient(
-        131deg,
-        #2effcb,
-        #00d59f 40%,
-        #1890d6 54%,
-        #208068 62%,
-        #388b77
-    );
+    background-image: linear-gradient( 131deg, #2effcb, #00d59f 40%, #1890d6 54%, #208068 62%, #388b77);
     width: 450px;
     height: 50px;
     position: relative;
@@ -5407,30 +5393,10 @@ figcaption {
     text-decoration: none;
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: flex;
-    position: relative;
-    top: 63px;
-    left: 58px;
     overflow: hidden;
-}
-
-.editgather {
-    z-index: 1;
-    color: #000;
-    cursor: pointer;
-    background-color: #fff;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 110px;
-    height: 35px;
-    font-family: Lato, sans-serif;
-    text-decoration: none;
-    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: flex;
-    position: relative;
-    top: 73px;
-    left: 88px;
-    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
 }
 
 .moreaboutinitiation {
@@ -7735,8 +7701,7 @@ figcaption {
     -webkit-text-fill-color: inherit;
     mix-blend-mode: normal;
     object-fit: fill;
-    background-image: url("../images/main_photo2.jpg"),
-        url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
+    background-image: url("../images/main_photo2.jpg"), url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
     background-position: 50% 0, 0 0;
     background-repeat: repeat, repeat;
     background-size: cover, auto;
@@ -8075,8 +8040,7 @@ figcaption {
 .cta_component {
     color: #fff;
     text-align: center;
-    background-image: linear-gradient(rgba(11, 7, 6, 0.5), rgba(11, 7, 6, 0.5)),
-        url("../images/cta.jpg");
+    background-image: linear-gradient(rgba(11, 7, 6, 0.5), rgba(11, 7, 6, 0.5)), url("../images/cta.jpg");
     background-position: 0 0, 50%;
     background-size: auto, cover;
     border-radius: 0.5rem;
@@ -9199,11 +9163,7 @@ figcaption {
 .fs-styleguide_spacing {
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
-    background-image: linear-gradient(
-        to top,
-        rgba(190, 243, 192, 0.2),
-        rgba(255, 255, 255, 0)
-    );
+    background-image: linear-gradient( to top, rgba(190, 243, 192, 0.2), rgba(255, 255, 255, 0));
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     grid-auto-columns: 1fr;
@@ -10415,13 +10375,13 @@ figcaption {
 }
 
 .gathersblock {
+    padding: 0px 0px 10px 0px;
     opacity: 1;
     outline-offset: 0px;
     background-color: #fff;
     border-radius: 8px;
     outline: 3px solid #817c4d;
     width: 300px;
-    height: 380px;
     margin-bottom: 40px;
     position: relative;
 }
@@ -10992,8 +10952,7 @@ figcaption {
     background-color: #fff;
     border-radius: 18px;
     font-family: Lato, sans-serif;
-    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
-        background-color 0.2s;
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), background-color 0.2s;
     position: relative;
 }
 
@@ -12337,14 +12296,7 @@ figcaption {
 }
 
 .btn-hover-4-colour-slider {
-    background-image: linear-gradient(
-        131deg,
-        #2effcb,
-        #00d59f 40%,
-        #1890d6 54%,
-        #208068 62%,
-        #388b77
-    );
+    background-image: linear-gradient( 131deg, #2effcb, #00d59f 40%, #1890d6 54%, #208068 62%, #388b77);
     width: 450px;
     height: 50px;
     position: relative;
@@ -12930,8 +12882,7 @@ figcaption {
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1680px) {
-}
+@media screen and (min-width: 1440px) and (max-width: 1680px) {}
 
 @media screen and (min-width: 1680px) and (max-width: 1920px) {
     .contact_header_details-wrapper {
@@ -12943,8 +12894,7 @@ figcaption {
     }
 }
 
-@media screen and (min-width: 1920px) {
-}
+@media screen and (min-width: 1920px) {}
 
 @media screen and (min-width: 1920px) {
     .contact_header_details-wrapper {
@@ -14389,11 +14339,7 @@ figcaption {
     font-weight: 600;
     line-height: 1.5;
     text-decoration: none;
-    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: inline-block;
     position: relative;
     top: 0;
@@ -14725,21 +14671,37 @@ figcaption {
     background-color: #c9ffc9;
 }
 
-.home_filters_input {
+.home_city_input {
     border: 0px;
     border-radius: 20px;
     padding: 6px;
 }
 
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .gather_big_img {
     background-size: cover;
-    background-position: top;
+    background-position: center;
 }
 
-
-.gahter_edit_img {
-    padding: 200px;
-}
 :root {
     --blue-violet: #783be2;
 }
@@ -14752,8 +14714,7 @@ figcaption {
     max-width: 450px;
     margin-bottom: 0;
     overflow: hidden;
-    box-shadow: inset 0 20px 45px -15px rgba(120, 59, 226, 0.07),
-        0 16px 25px rgba(24, 31, 156, 0.07);
+    box-shadow: inset 0 20px 45px -15px rgba(120, 59, 226, 0.07), 0 16px 25px rgba(24, 31, 156, 0.07);
 }
 
 .modal-bottom {
@@ -14773,8 +14734,7 @@ figcaption {
     border-radius: 50%;
     margin-bottom: 20px;
     padding: 10px;
-    box-shadow: inset 0 2px 18px rgba(0, 0, 0, 0.2),
-        inset 0 -2px 9px rgba(255, 255, 255, 0.31);
+    box-shadow: inset 0 2px 18px rgba(0, 0, 0, 0.2), inset 0 -2px 9px rgba(255, 255, 255, 0.31);
 }
 
 .icon {
@@ -14960,3 +14920,37 @@ figcaption {
     display: flex;
 }
 
+.gather_div_text {
+    width: 230px;
+}
+
+.home_filters_input {
+    border: 0px;
+    border-radius: 20px;
+    padding: 6px;
+}
+
+.editgather {
+    z-index: 1;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 35px;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.gahter_edit_img {
+    padding: 200px;
+}

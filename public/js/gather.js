@@ -42,7 +42,7 @@ $(function() {
             processData: false, // Don't process the data
             dataType: 'json',
             success: function(responce) {
-                displayGathers(responce);
+                displayGathers(responce.gathers, responce.recordHashTags);
             },
             error: function(responce) {
                 console.log(responce);
@@ -78,7 +78,7 @@ $(function() {
 });
 
 
-function displayGathers(gathers) {
+function displayGathers(gathers, recordHashTags) {
     $('.home-gathers').html('');
 
     for (var key in gathers) {
@@ -93,13 +93,19 @@ function displayGathers(gathers) {
         }
 
 
+        let hashTags = ' ';
+        recordHashTags[gather['gather_id']].forEach(element => {
+            hashTags += ' ' + element + ' ';
+        });
+
+
         const gather_html = $(`
                 <div class="gathersblock">
-                <div class="hashtags">#Їжа #mono-банка #Закритий</div>
+                <div class="hashtags">${hashTags}</div>
                 ${img_div}
-                <div class="gathername">${gather['title']}</div>
-                <div class="gathergoal">Мета збору: ${gather['goal_amount']} грн<br></div>
-                <div class="gathergoal">${gather['description']}</div>
+                <div class="gathername gather_div_text">${gather['title']}</div>
+                <div class="gathergoal gather_div_text">Мета збору: ${gather['goal_amount']} грн<br></div>
+                <div class="gathergoal gather_div_text">${gather['description']}</div>
                 <a data-w-id="32091814-7894-c01d-8689-89eac397c784" style="background-color:rgb(230,230,230)" href="/gather/${gather['gather_id']}" class="moreaboutgather w-inline-block">
                 <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="top-line"></div>
                 <div class="button3-text-2">Більше про збір</div>
