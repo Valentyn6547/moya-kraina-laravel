@@ -46,13 +46,14 @@ Route::post('/login', [Login::class, 'login']);
 //Cabinet
 Route::get('/cabinet', [Cabinet::class, 'run'])->name('cabinet');
 Route::get('/create-gather', [Gathers::class, 'createGather']);
+Route::get('/edit-gather/{editGather}', [Gathers::class, 'editGather'])->name('editGather');;
 Route::post('/update-user-data', [Cabinet::class, 'updateUserData'])->name('updateUserData');
 
 
 //other
 //Route::post('/upload', [ImageUploadController::class, 'uploadImg'])->name('uploadImg');
 Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('createGatherPost');
-
+Route::post('/updateGather', [Cabinet::class, 'updateGatherPost'])->name('updateGatherPost');
 
 
 //Reset Password
