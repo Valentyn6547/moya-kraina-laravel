@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Gathers;
+use App\Models\GathersTags;
+use App\Models\GatherTags;
 use Illuminate\Support\Facades\Storage;
+
 
 class Cabinet extends Controller
 {
@@ -20,7 +23,15 @@ class Cabinet extends Controller
 
             $gathers = Gathers::where('user_id', $user_id)->get();
 
+            $hashTagsQuery = Gathers::query();
 
+            $hashTagsQuery->select('gather_tags.*');
+            $hashTagsQuery->join('users', 'users.user_id', '=', 'gathers.user_id');
+            $hashTagsQuery->join('gather_tags', 'gather_tags.gather_tag_id', '=', 'gathers.gather_id');
+
+            $hashTags = $hashTagsQuery->get();
+
+            
             $user_data = [
                 'name' => $user->name,
                 'surname' => $user->surname,
@@ -30,7 +41,6 @@ class Cabinet extends Controller
                 'user_type' => $user->user_type,
                 'gathers' => $gathers
             ];
-
 
             return view('cabinet', $user_data);
         }else{
@@ -108,12 +118,19 @@ class Cabinet extends Controller
         $gather->save();
 
         
-        if ($request->has('hashTags')) {
-            
+        if ($request->has('hashTags') && strlen($request->get('hashTags')) < 200) {
+            $tags = explode(' ', $request->get('hashTags'));
+            foreach($tags as $tag){
+                $record = new GatherTags();
+                $record->gather_id = $gather->gather_id;
+                $record->gather_tag_name = $tag;
+                $record->save();
+            }
         }
 
         return true;
     }
+
 
     function updateGatherPost(Request $request){
 
@@ -133,28 +150,32 @@ class Cabinet extends Controller
 
 
        
-       
-
+    
         $gather = Gathers::where('user_id', $user_id)
-                        ->where('gather_id', $validatedData['gather_id'])->get();
-        $gather->user_id = $user_id;
-        $gather->title = $validatedData['title'];
-        $gather->description = $validatedData['description'];
-        $gather->donation_link = $validatedData['donation_link'];
-        $gather->publish_date = $validatedData['publish_date'];
-        $gather->goal_amount = $validatedData['goal_amount'];
-        $gather->status = $validatedData['status'];
+                        ->where('gather_id', $request->get('gather_id'))->first();
 
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->image->store('images', 'public');
-            
-            // Get the full URL of the stored image
-            $imageUrl = Storage::url($imagePath);
-            $gather->image_path = $imageUrl;
+        if($gather){
+            $gather->title = $validatedData['title'];
+            $gather->description = $validatedData['description'];
+            $gather->donation_link = $validatedData['donation_link'];
+            $gather->publish_date = $validatedData['publish_date'];
+            $gather->goal_amount = $validatedData['goal_amount'];
+            $gather->status = $validatedData['status'];
+    
+    
+            if ($request->hasFile('image')) {
+                $imagePath = $request->image->store('images', 'public');
+                
+                // Get the full URL of the stored image
+                $imageUrl = Storage::url($imagePath);
+                $gather->image_path = $imageUrl;
+            }
+           
+            $gather->save();
+        }else{
+            return false;
         }
        
-        $gather->save();
 
 
         return true;

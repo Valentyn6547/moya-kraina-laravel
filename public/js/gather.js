@@ -63,7 +63,7 @@ $(function() {
     });
 
 
-    $('#city_input').on('change', function(e) {
+    $('#home_filters_input').on('change', function(e) {
         e.preventDefault();
 
         $('#gather_filter_input').val($(this).attr('filter_name') + ';' + $(this).attr('value'));
@@ -99,7 +99,7 @@ function displayGathers(gathers) {
                 ${img_div}
                 <div class="gathername">${gather['title']}</div>
                 <div class="gathergoal">Мета збору: ${gather['goal_amount']} грн<br></div>
-                <div class="earnedmoneytext">Вже зібрали ___ грн</div>
+                <div class="gathergoal">${gather['description']}</div>
                 <a data-w-id="32091814-7894-c01d-8689-89eac397c784" style="background-color:rgb(230,230,230)" href="/gather/${gather['gather_id']}" class="moreaboutgather w-inline-block">
                 <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="top-line"></div>
                 <div class="button3-text-2">Більше про збір</div>
