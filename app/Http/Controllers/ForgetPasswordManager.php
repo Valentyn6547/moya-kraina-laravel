@@ -1,11 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Category;
+use App\Mail\MailNotify;
+use App\Models\User;
+
 
 class ForgetPasswordManager extends Controller
 {
@@ -42,10 +51,10 @@ class ForgetPasswordManager extends Controller
         return view("newpassword", ['token' => $token]);
     }
 
-    function resetPasswordPost(Reqest $request)
+    function resetPasswordPost(Request $request)
     {
         $request->validate([
-            "email" => "required|email|exists:user",
+            "email" => "required|email|exists:users",
             "password" => "required|string|min:6|confirmed",
             "password_confirmation" => "required"
         ]);

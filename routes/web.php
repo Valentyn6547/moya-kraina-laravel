@@ -42,7 +42,7 @@ Route::get('/register', [Register::class, 'run']);
 Route::get('/login', [Login::class, 'run']);
 
 Route::post('/register/submit', [RegisterSubmit::class, 'submit']);
-Route::post('/login', [Login::class, 'login']);
+Route::post('/login', [Login::class, 'login'])->name("login");
 
 
 //Cabinet
@@ -58,11 +58,8 @@ Route::post('/createGather', [Cabinet::class, 'createGatherPost'])->name('create
 
 
 //Reset Password
-// Route::get('/reset-password', [ResetPasswordController::class, 'showResetForm'])->name('password.request');
-// Route::post('/password/email', [ResetPasswordController::class, 'reset'])->name('password.email');
 
-// Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.reset');
-// Route::post('/password/update', [ResetPasswordController::class, 'store'])->name('password.update');
+ Route::post('/password/email', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name('password.email');
 
 Route::get("/forget-password",[ForgetPasswordManager::class, "forgetPassword"])->name("forget.password");
 Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPost"])->name("forget.password.post");
