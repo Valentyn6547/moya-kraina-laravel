@@ -13,6 +13,8 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\CreateInitiation;
 use App\Http\Controllers\gatherExample;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\ForgetPasswordManager;
 // use App\Http\Controllers\ImageUploadController;
 
 /*
@@ -40,7 +42,7 @@ Route::get('/register', [Register::class, 'run']);
 Route::get('/login', [Login::class, 'run']);
 
 Route::post('/register/submit', [RegisterSubmit::class, 'submit']);
-Route::post('/login', [Login::class, 'login']);
+Route::post('/login', [Login::class, 'login'])->name("login");
 
 
 //Cabinet
@@ -57,9 +59,15 @@ Route::post('/updateGather', [Cabinet::class, 'updateGatherPost'])->name('update
 
 
 //Reset Password
-Route::get('/reset-password', [ResetPassword::class, 'showResetForm'])->name('password.request');
-Route::post('/password/email', [ResetPasswordController::class, 'reset'])->name('password.email');
 
+ Route::post('/password/email', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name('password.email');
+
+Route::get("/forget-password",[ForgetPasswordManager::class, "forgetPassword"])->name("forget.password");
+Route::post("/forget-password",[ForgetPasswordManager::class, "forgetPasswordPost"])->name("forget.password.post");
+
+Route::get("/reset-password/{token}", [ForgetPasswordManager::class, "resetPassword"])->name ("reset.password");
+
+Route::post("/reset-password",[ForgetPasswordManager::class, "resetPasswordPost"])->name("reset.password.post");
 
 // Initiations
 Route::get('/create-initiation', [CreateInitiation::class, 'create'])->name('createInitiation');

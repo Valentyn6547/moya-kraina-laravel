@@ -3,16 +3,6 @@
 @section('content')
 <div class="w-users-userformpagewrap">
     <div class="w-users-userresetpasswordformwrapper">
-        @if (session('status'))
-            <div tabindex="-1" class="w-users-userformsuccessstate w-form-success">
-                <div class="w-users-userformheader">
-                    <img src="https://d3e54v103j8qbb.cloudfront.net/img/email-72.67fa6be437.svg" loading="lazy" alt="">
-                    <h2>Password Reset Email Sent</h2>
-                </div>
-                <p>{{ session('status') }}</p>
-            </div>
-        @endif
-
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
             <div class="w-users-userformheader">
@@ -25,6 +15,9 @@
             @endif
             <input type="submit" data-wait="Please wait..." class="w-users-userformbutton submit-button-3 w-button" value="Відновити пароль">
         </form>
+        @if (session('status'))
+            <p class="w-users-userformsuccessmessage">Лист з посиланням для скидання паролю було успішно надіслано на вашу електронну адресу.</p>
+        @endif
     </div>
 </div>
 @stop
