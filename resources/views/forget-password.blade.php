@@ -18,7 +18,7 @@
                 <div class="spacer-20"></div>
                 <div class="passwordinputwrapper"></div>
                 <div class="inputpasswrapper">
-                <input type="text" name="token" hidden value="{{ $token }}">
+                <input type="text" name="token" hidden value="{{$token}}">
                 <div class="mb-3">
 <label class="form-label"> Пошта</label>
 <input type="email" class="form-control" name="email">

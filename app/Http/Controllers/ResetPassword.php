@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Password;
 class ResetPassword extends Controller
 {
     
-    public function showResetForm()
-    {
-        return view('resetpassword');
-    }
-
     public function reset(Request $request)
     {
         // Validate the form data
