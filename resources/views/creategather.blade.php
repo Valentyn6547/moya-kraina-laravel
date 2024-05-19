@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<script>
+function updateFileName(input) {
+    var fileName = input.files[0].name;
+    document.getElementById('file-name-display').innerText = "Додано файл: " + fileName;
+}
+</script>
     <form class="form-create-gather" action="{{ route('createGatherPost') }}" data-method='serialize' method="post" enctype="multipart/form-data">
         @csrf
         <section class="hero-heading-center-14">
@@ -9,16 +15,20 @@
             </div>
         </section>
         <section class="hero-heading-center-20">
-            <div class="container-10">
-                <img src="images/pictures.png" loading="lazy" width="58" alt="" class="addwraper" style="margin-left: 70px;">
-                <div class="container-13">
-                    <h1 class="centered-heading-9 margin-bottom-32px">Додати обкладинку</h1>
-        
-                    <label for="avatar">Choose a profile picture:</label>
-        
-                    <input type="file" id="avatar" name="image">
-                </div>
-            </div>
+        <div class="container-10">
+    <img src="images/pictures.png" loading="lazy" width="58" alt="" class="addwraper" style="margin-left: 70px;">
+    <div class="container-13">
+        <h1 class="centered-heading-9 margin-bottom-32px">Додати обкладинку</h1>
+
+        <label for="avatar" class="custom-file-upload">
+            <span>Вибрати зображення</span>
+        </label>
+
+        <input type="file" id="avatar" name="image" style="display: none;" onchange="updateFileName(this)">
+        <div id="file-name-display"></div>
+    </div>
+</div>
+
         </section>
         <section class="hero-heading-center-15">
             <div class="form-block-copy w-form">
