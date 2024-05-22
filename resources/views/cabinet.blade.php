@@ -163,12 +163,12 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
         @endforeach
  
     </section>
-    {{-- <section class="initiationsheaderpart">
+    <section class="initiationsheaderpart">
         <div class="container-9"></div>
         <h1 class="initiationsofminetext margin-bottom-32px">Ініціативи, що стосуються мене</h1>
-        <a href="#" class="allinitiationsbutton w-button">Всі ініціативи</a>
+        {{-- <a href="#" class="allinitiationsbutton w-button">Всі ініціативи</a>
         <a href="#" class="initiatedbutton w-button">Проявив(ла) ініціативу</a>
-        <a href="#" class="myinitiationsbutton w-button">Мої ініціативи</a>
+        <a href="#" class="myinitiationsbutton w-button">Мої ініціативи</a> --}}
         <a data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66400" href="{{ route('createInitiation') }}"
            class="button2-3 w-inline-block">
             <div data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66401" style="color:rgb(0,0,0)" class="button2-text">Створити
@@ -180,12 +180,25 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
         </a>
     </section>
     <section class="initiations">
+        @foreach ($activities as $activity)
         <div class="initiationsblock">
-            <div class="cityhashtag">#Львів</div>
-            <div class="status">     Активна     </div>
-            <div class="initiationname">Назва ініціативи</div>
-            <div class="initiationdescription">Короткий опис:<br></div>
-            <div class="dividerlineininitiations">---------------------------------------------------------</div>
+           
+            <div class="gather_img" style="background-image: url({{$activity['image_path']}});">
+                <div class="cityhashtag">
+                    @if(isset($recordHashTagsA[$activity['activity_id']]))
+                    @foreach ($recordHashTagsA[$activity['activity_id']] as $tag)
+                    {{$tag}}
+                @endforeach
+                    @endif
+                     
+                </div>
+                <div class="status">     {{$activity['status']}}     </div>
+            </div>
+         
+            <div class="initiationname">{{$activity['title']}}</div>
+            <div class="initiationdescription">Короткий опис:<br> <div class="gather_div_text">{{$activity['description']}}</div></div>
+           
+
             <img src="images/location.png" loading="lazy" width="28" sizes="28px" alt=""
                  srcset="images/location-p-500.png 500w, images/location-p-800.png 800w, images/location.png 980w"
                  class="location-image"><img src="images/data.png" loading="lazy" width="26" height="Auto" alt=""
@@ -193,10 +206,10 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
                                              sizes="(max-width: 767px) 26px, (max-width: 991px) 3vw, 26px"
                                              class="dataimage"><img src="images/time.png" loading="lazy" width="30"
                                                                     alt="" class="timeimage">
-            <div class="text-block-6">Час</div>
-            <div class="datatext">Дата</div>
-            <div class="locationtext">Локація</div>
-            <div class="locationtext">Локація</div>
+            <div class="text-block-6">{{$activity['time']}}</div>
+            <div class="datatext">{{$activity['publish_date']}}</div>
+          
+      
             <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"
                href="gatherexample.html" class="moreaboutinitiation w-inline-block">
                 <div
@@ -213,9 +226,9 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
                     style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                     class="right-line"></div>
             </a>
-            <div class="locationtext">Локація</div>
-            <div class="locationtext">Локація</div>
-            <div class="locationtext">Локація</div>
+            <div class="locationtext">Локація<br>{{$activity['address']}}</div>
+
         </div>
-    </section> --}}
+        @endforeach
+    </section>
 @stop

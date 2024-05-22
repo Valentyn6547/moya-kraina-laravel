@@ -71,7 +71,8 @@ Route::post("/reset-password",[ForgetPasswordManager::class, "resetPasswordPost"
 
 // Initiations
 Route::get('/create-initiation', [CreateInitiation::class, 'create'])->name('createInitiation');
-
+Route::post('/createActivitiesPost', [CreateInitiation::class, 'createActivitiesPost'])->name('createActivitiesPost');
+Route::post('/getActivities', [Home::class, 'getActivities'])->name('getActivities');
 
 // GatherExample
 Route::get('/gather-example', [gatherExample::class, 'run'])->name('gatherExample');
