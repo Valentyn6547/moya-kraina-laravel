@@ -63,7 +63,11 @@
       </a>
     </div>
   </section>
+  
+  @include('inc.activitieslayouts')
   @include('inc.gatherlayouts')
+ 
+  
   {{-- <section class="home-initiationsheader">
     <div class="container-9">
       <h1 class="centered-heading-5 margin-bottom-32px">Рекомендовані ініціативи</h1>
