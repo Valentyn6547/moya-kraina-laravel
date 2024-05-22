@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Gathers;
 use App\Models\GatherTags;
+use App\Models\Activities;
+use App\Models\ActivityTags;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -23,7 +25,6 @@ class Cabinet extends Controller
             $gathers = Gathers::where('user_id', $user_id)->get();
 
             $hashTagsQuery = Gathers::query();
-
             $hashTagsQuery->select('gather_tags.*');
             $hashTagsQuery->join('users', 'users.user_id', '=', 'gathers.user_id');
             $hashTagsQuery->join('gather_tags', 'gather_tags.gather_id', '=', 'gathers.gather_id');
@@ -41,7 +42,30 @@ class Cabinet extends Controller
                 }
             }
 
-       
+
+
+            $activities =  Activities::where('user_id', $user_id)->get();
+
+            $hashTagsQueryA = Activities::query();
+            $hashTagsQueryA->select('activity_tags.*');
+            $hashTagsQueryA->join('users', 'users.user_id', '=', 'activities.user_id');
+            $hashTagsQueryA->join('activity_tags', 'activity_tags.activity_id', '=', 'activities.activity_id');
+
+            $hashTagsA = $hashTagsQueryA->get();
+
+            $recordHashTagsA = array();
+
+            foreach($hashTagsA as $tag){
+                if(isset($recordHashTagsA[$tag['activity_id']])){
+                    $temp_array = &$recordHashTagsA[$tag['activity_id']];
+                    array_push($temp_array,$tag['activity_tag_name']);
+                }else{
+                    $recordHashTagsA[$tag['activity_id']] = array($tag['activity_tag_name']);
+                }
+            }
+           
+
+      
             $user_data = [
                 'name' => $user->name,
                 'surname' => $user->surname,
@@ -50,7 +74,9 @@ class Cabinet extends Controller
                 'city' => $user->city,
                 'user_type' => $user->user_type,
                 'gathers' => $gathers,
-                'recordHashTags' => $recordHashTags
+                'recordHashTags' => $recordHashTags,
+                'activities' => $activities,
+                'recordHashTagsA' => $recordHashTagsA
             ];
 
             return view('cabinet', $user_data);
@@ -92,6 +118,10 @@ class Cabinet extends Controller
 
 
     function createGatherPost(Request $request){
+
+        if(!Session::get('autorizated')) {
+            return response()->json(['error' => 'User not logined'], 404);}
+
 
         $user_id = Session::get('user_id');
 

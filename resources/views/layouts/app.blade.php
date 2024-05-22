@@ -44,7 +44,7 @@
       <div class="nav_container">
 
         <a href="/" class="w-nav-brand">
-            <div class="text-block">Moya Kraina</div>
+            <div class="text-block">Volonterka</div>
         </a>
         <nav role="navigation" class="nav_menu w-nav-menu">
           <div class="nav_link-list">
@@ -102,6 +102,7 @@
   <script src="{{ asset('js/global.js') }}"></script>
   <script src="{{ asset('js/global_functions.js') }}"></script>
   <script src="{{ asset('js/gather.js') }}"></script>  
+  <script src="{{ asset('js/activities.js') }}"></script> 
   <script src="/js/jquery.cosyAlert.min.js"></script>
   <link href="/css/jquery.cosyAlert.css" rel="stylesheet">
 </body>

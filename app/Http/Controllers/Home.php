@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gathers;
+use App\Models\Activities;
 use App\Models\Ukrainian_Cities;
 
 class Home extends Controller
@@ -102,5 +103,85 @@ class Home extends Controller
        $cities = $query->pluck('city_ua');
      
        return $cities;
+    }
+
+
+    public function getActivities(Request $request){
+        $activitiesQuery = Activities::query();
+
+        $activitiesQuery->select('activities.*', 'users.city');
+        $activitiesQuery->leftJoin('users', 'users.user_id', '=', 'activities.user_id');
+
+
+         
+
+        if(isset($request['activities_filter_input'])) {
+            
+            $filters = explode(';', $request['activities_filter_input']);
+
+            $filter_name = $filters[0];
+            $filter_value = $filters[1];
+
+            switch($filter_name){
+                case 'status':
+                    $activitiesQuery->where('status', $filter_value);
+                    break;
+            }
+
+           
+        }
+       
+        if(isset($request['city_input']) && !empty($request['city_input'])) {
+            $activitiesQuery->where('city', $request['city_input']);
+        }
+        if(isset($request['search_text']) && !empty($request['search_text'])) {
+            $activitiesQuery->where('activities.title', 'like', '%'.$request['search_text'].'%');
+        }
+       
+     
+
+    
+
+        $activities = $activitiesQuery->limit(36)->get();
+
+        $gather_Ids = array();
+        foreach($activities as $activity){
+            $gather_Ids[] = $activity['activity_id'];
+        }
+
+
+
+        //HASH TAGS QUERY
+  
+        $hashTagsQuery = Activities::query();
+        $hashTagsQuery->select('activity_tags.*');
+        $hashTagsQuery->join('users', 'users.user_id', '=', 'activities.user_id');
+        $hashTagsQuery->join('activity_tags', 'activity_tags.activity_id', '=', 'activities.activity_id');
+
+        $hashTags = $hashTagsQuery->get();
+
+        
+
+
+        $recordHashTags = array();
+
+        foreach($hashTags as $tag){
+            if(isset($recordHashTags[$tag['activity_id']])){
+                $temp_array = &$recordHashTags[$tag['activity_id']];
+                array_push($temp_array,$tag['activity_tag_name']);
+            }else{
+                $recordHashTags[$tag['activity_id']] = array($tag['activity_tag_name']);
+            }
+        }
+
+
+
+        $responce = array(
+            'activities' => $activities ,
+            'recordHashTags' => $recordHashTags
+        );
+        
+
+        return response()->json($responce);
     }
 }
