@@ -180,25 +180,20 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
         </a>
     </section>
     <section class="initiations">
+    <div class="initiations-container">
         @foreach ($activities as $activity)
         <div class="initiationsblock">
-           
             <div class="gather_img" style="background-image: url({{$activity['image_path']}});">
                 <div class="cityhashtag">
                     @if(isset($recordHashTagsA[$activity['activity_id']]))
                     @foreach ($recordHashTagsA[$activity['activity_id']] as $tag)
                     {{$tag}}
-                @endforeach
+                    @endforeach
                     @endif
-                     
                 </div>
-                <div class="status">     {{$activity['status']}}     </div>
+                <div class="status"> {{$activity['status']}} </div>
             </div>
-         
             <div class="initiationname">{{$activity['title']}}</div>
-            <div class="initiationdescription">Короткий опис:<br> <div class="gather_div_text">{{$activity['description']}}</div></div>
-           
-
             <img src="images/location.png" loading="lazy" width="28" sizes="28px" alt=""
                  srcset="images/location-p-500.png 500w, images/location-p-800.png 800w, images/location.png 980w"
                  class="location-image"><img src="images/data.png" loading="lazy" width="26" height="Auto" alt=""
@@ -208,8 +203,6 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
                                                                     alt="" class="timeimage">
             <div class="text-block-6">{{$activity['time']}}</div>
             <div class="datatext">{{$activity['publish_date']}}</div>
-          
-      
             <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"
                href="gatherexample.html" class="moreaboutinitiation w-inline-block">
                 <div
@@ -226,9 +219,9 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
                     style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                     class="right-line"></div>
             </a>
-            <div class="locationtext">Локація<br>{{$activity['address']}}</div>
-
         </div>
         @endforeach
-    </section>
-@stop
+    </div>
+</section>
+
+
