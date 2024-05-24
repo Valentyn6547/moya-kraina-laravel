@@ -6,7 +6,7 @@
       <h1 class="gatherheader margin-bottom-32px">{{$record['title']}}</h1>
     </div>
     <div class="enddategather">Дата закінчення : {{$record['publish_date']}}</div>
-    <a href="{{$record['donation_link']}}" target="_blank" class="dodonationbutton w-button">        {{$button_lable}}    </a>
+    <a href="{{$button_link}}" target="_blank" class="dodonationbutton w-button">        {{$button_lable}}    </a>
       <div class="padding-global">
         <div class="nav_container">
           <div class="nav_menu-button w-nav-button">

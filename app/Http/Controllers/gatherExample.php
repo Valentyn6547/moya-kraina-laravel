@@ -20,7 +20,8 @@ class gatherExample extends Controller
 
             $data = array(
                 'record' => $gather[0],
-                'button_lable' => 'Задонатити'
+                'button_lable' => 'Задонатити',
+                'button_link' => $gather[0]['donation_link'] 
             );
 
 
@@ -40,7 +41,8 @@ class gatherExample extends Controller
 
             $data = array(
                 'record' => $activity[0],
-                'button_lable' => 'Проявити Ініціативу'
+                'button_lable' => 'Проявити Ініціативу',
+                'button_link' => "https://www.google.com/maps?sca_esv=832bfc491017b489&output=search&q=".$activity[0]['address']."&source=lnms&entry=mc&ved=1t:200715&ictx=111"
             );
 
 
