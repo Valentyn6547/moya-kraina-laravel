@@ -79,5 +79,4 @@
 
 </section>
 </form>
-<script src="{{ asset('js/activities.js') }}"></script>  
 @stop

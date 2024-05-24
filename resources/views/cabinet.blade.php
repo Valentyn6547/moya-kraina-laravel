@@ -68,14 +68,10 @@
                       data-ms-form="profile" class="ms-profile-form" data-wf-page-id="661961d36318c956b6d31104"
                       data-wf-element-id="83c41cf0-1dc7-1bf9-1208-0cf699e55e1e">
                     <div class="ms-list-container">
-                        <div class="ms-input-row"><label for="Full-Name-3" class="makedinitiationsstats">Проявив(ла)
-                                ініціативу: ___ разів</label></div>
-                        <div class="ms-input-row"><label for="Email-2" class="donatedstats">Задонатив(ла): ___
-                                грн </label></div>
                         <div class="ms-input-row"><label for="Phone-2" class="createdinitiationsstats">Створених
-                                іцініатив: </label></div>
+                                іцініатив: {{$statistic['count_activities']}}</label></div>
                         <div class="ms-input-row"><label for="DOB-2" class="createdgatherstats">Створених
-                                зборів: </label></div>
+                                зборів: {{$statistic['count_gathers']}}</label></div>
                     </div>
                 </form>
                 <div class="w-form-done">
@@ -123,9 +119,18 @@
             @if(!empty($gather['image_path']))
                 <div class="gather_img" style="background-image: url({{$gather['image_path']}});"></div>
             @endif
-            <div class="gathername gather_div_text">{{$gather['title']}}</div>
+            <div class="gathername gather_div_text"><p>{{$gather['title']}}</p></div>
             <div class="gathergoal gather_div_text">Мета збору:{{$gather['goal_amount']}} грн<br></div>
-            <div class="earnedmoneytext gather_div_text">{{$gather['description']}}</div>
+            <div class="earnedmoneytext gather_div_text"><p>
+          
+
+            @if (strlen($gather['description']) > 100)
+                {{ substr($gather['description'], 0, 100) }} ...
+            @else
+                {{$gather['description']}}
+            @endif 
+            
+            </p></div>
             {{-- <div class="dividerline">---------------------------------------------------------</div> --}}
             <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color:rgb(230,230,230)"
    href="/gather/{{$gather['gather_id']}}" class="moreaboutgather w-inline-block">
@@ -201,6 +206,7 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
                                              sizes="(max-width: 767px) 26px, (max-width: 991px) 3vw, 26px"
                                              class="dataimage"><img src="images/time.png" loading="lazy" width="30"
                                                                     alt="" class="timeimage">
+            <p style="margin-left: 83px;">{{$activity['address']}}</p>
             <div class="text-block-6">{{$activity['time']}}</div>
             <div class="datatext">{{$activity['publish_date']}}</div>
             <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"

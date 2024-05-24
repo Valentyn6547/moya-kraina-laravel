@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gathers;
+use App\Models\Activities;
 
 class gatherExample extends Controller
 {
@@ -17,17 +18,36 @@ class gatherExample extends Controller
 
         if (!$gather->isEmpty()) {
 
-            $gather_data = array(
-                'gather' => $gather[0]
+            $data = array(
+                'record' => $gather[0],
+                'button_lable' => 'Задонатити'
             );
 
 
 
-            return view('gatherexample', $gather_data);
+            return view('gatherexample', $data);
         }else{
             return view('');
         }
 
        
+    }
+
+    function activity_detail($id){
+        $activity = Activities::where('activity_id', $id)->get();
+
+        if (!$activity->isEmpty()) {
+
+            $data = array(
+                'record' => $activity[0],
+                'button_lable' => 'Проявити Ініціативу'
+            );
+
+
+
+            return view('gatherexample', $data);
+        }else{
+            return view('');
+        }
     }
 }
