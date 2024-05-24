@@ -116,7 +116,6 @@ function displayactivities(activities, recordHashTags) {
         <div class="initiationname">${activity['title']}</div>
         <div class="initiationdescription">Короткий опис:<br> <div class="gather_div_text">${activity['description']}</div></div>
        
-        <div class="dividerlineininitiations">---------------------------------------------------------</div>
         <img src="images/location.png" loading="lazy" width="28" sizes="28px" alt=""
              srcset="images/location-p-500.png 500w, images/location-p-800.png 800w, images/location.png 980w"
              class="location-image"><img src="images/data.png" loading="lazy" width="26" height="Auto" alt=""
@@ -128,21 +127,9 @@ function displayactivities(activities, recordHashTags) {
         <div class="datatext">${activity['publish_date']}</div>
       
   
-        <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"
-           href="/activity/${activity["activity_id"]}" class="moreaboutinitiation w-inline-block">
-            <div
-                style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                class="top-line"></div>
+        <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" href="/activity/${activity["activity_id"]}" class="more-about-initiation w-inline-block">
             <div class="button3-text-2">Більше про ініціативу</div>
-            <div
-                style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                class="bottom-line"></div>
-            <div
-                style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                class="left-line"></div>
-            <div
-                style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                class="right-line"></div>
+            <div class="button3-reveal"></div>
         </a>
         <div class="locationtext">Локація<br>${activity['address']}</div>
 

@@ -5536,11 +5536,7 @@ figcaption {
     top: 44%;
     left: 70%;
     overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: inline-block;
     position: relative;
     top: 0;
@@ -5585,11 +5581,7 @@ figcaption {
     padding: 15px 45px;
     text-decoration: none;
     overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: inline-block;
     position: relative;
     top: 0;
@@ -5633,11 +5625,7 @@ figcaption {
     top: 44%;
     left: 70%;
     overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: inline-block;
     position: relative;
     top: 0;
@@ -5676,22 +5664,24 @@ figcaption {
 }
 
 .more-about-initiation {
+    z-index: 1;
     color: #000;
-    border: 2px solid #817c4d;
-    border-radius: 0;
-    padding: 10px 30px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 55px;
+    font-family: Lato, sans-serif;
     text-decoration: none;
-    position: absolute;
-    left: 8px;
-    bottom: -190px;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
     overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    display: inline-block;
-    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 130px;
+    border: 2px solid #817c4d;
     box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
 }
 
@@ -5738,11 +5728,7 @@ figcaption {
     height: 55px;
     font-family: Lato, sans-serif;
     text-decoration: none;
-    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: flex;
     overflow: hidden;
     margin-right: auto;
@@ -12598,6 +12584,9 @@ figcaption {
 }
 
 .moreaboutinitiation {
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -90;
     z-index: 1;
     color: #000;
     cursor: pointer;
@@ -12612,8 +12601,7 @@ figcaption {
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: flex;
     position: relative;
-    top: 160px;
-    left: 58px;
+    ;
     overflow: hidden;
 }
 
@@ -15089,7 +15077,6 @@ input[type="file"] {
     margin-top: 1em;
 }
 
-
 .custom-file-upload::before {
     content: "";
     position: absolute;
@@ -15103,15 +15090,11 @@ input[type="file"] {
     z-index: 0;
 }
 
-
-
 .custom-file-upload span {
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
 }
-
-
 
 .custom-file-upload:hover::before {
     transform: translate(-50%, -50%) scale(1);
@@ -15161,7 +15144,8 @@ input[type="file"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
+    background: rgba(0, 0, 0, 0.5);
+    /* Напівпрозорий чорний фон */
     z-index: 1;
 }
 
@@ -15193,4 +15177,30 @@ input[type="file"] {
     /* дозволяє обгортання блоку в новий рядок, якщо він не вміщується у один */
     gap: 100px;
     /* відстань між блоками */
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }

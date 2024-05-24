@@ -1,5 +1,5 @@
-$(function () {
-    $(".form-create-gather").on("submit", function (e) {
+$(function() {
+    $(".form-create-gather").on("submit", function(e) {
         e.preventDefault();
 
         const data = new FormData(this);
@@ -11,21 +11,21 @@ $(function () {
             contentType: false, // Let jQuery handle the content type
             processData: false, // Don't process the data
             dataType: "json",
-            success: function (result) {
+            success: function(result) {
                 if (result.error !== undefined) {
                     cosyAlert(result.error, "error", { autoHideTime: 2000 });
                 } else {
                     window.location.href = "/cabinet";
                 }
             },
-            error: function (result) {
+            error: function(result) {
                 result = JSON.parse(result.responseText);
                 cosyAlert(parseError(result), "error", { autoHideTime: 2000 });
             },
         });
     });
 
-    $(".form_get_gathers").on("submit", function (e) {
+    $(".form_get_gathers").on("submit", function(e) {
         e.preventDefault();
 
         const data = new FormData(this);
@@ -37,16 +37,16 @@ $(function () {
             contentType: false, // Let jQuery handle the content type
             processData: false, // Don't process the data
             dataType: "json",
-            success: function (responce) {
+            success: function(responce) {
                 displayGathers(responce.gathers, responce.recordHashTags);
             },
-            error: function (responce) {
+            error: function(responce) {
                 console.log(responce);
             },
         });
     });
 
-    $(".gather_filters li.option").on("click", function (e) {
+    $(".gather_filters li.option").on("click", function(e) {
         e.preventDefault();
         $(".gather_filters li.option").removeClass("filter_selected");
         $(this).addClass("filter_selected");
@@ -58,7 +58,7 @@ $(function () {
         $(".form_get_gathers").trigger("submit");
     });
 
-    $("#home_filters_input").on("change", function (e) {
+    $("#home_filters_input").on("change", function(e) {
         e.preventDefault();
 
         $("#gather_filter_input").val(
@@ -96,13 +96,10 @@ function displayGathers(gathers, recordHashTags) {
                 <div class="gathername gather_div_text">${gather["title"]}</div>
                 <div class="gathergoal gather_div_text">Мета збору: ${gather["goal_amount"]} грн<br></div>
                 <div class="gathergoal gather_div_text">${gather["description"]}</div>
-                <a data-w-id="32091814-7894-c01d-8689-89eac397c784" style="background-color:rgb(230,230,230)" href="/gather/${gather["gather_id"]}" class="moreaboutgather w-inline-block">
-                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="top-line"></div>
-                <div class="button3-text-2">Більше про збір</div>
-                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="bottom-line"></div>
-                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="left-line"></div>
-                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="right-line"></div>
-                </a>
+                <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" href="/gather/${gather["gather_id"]}" class="more-about-gather w-inline-block">
+                <div class="gather-reveal"></div>
+                <div class="gather-text">Більше про збір</div>
+            </a>
             </div>
         `);
 
