@@ -2704,7 +2704,7 @@ figcaption {
 .footer-dark {
     background-color: #fff;
     border-bottom: 1px solid #e4ebf3;
-    margin-top: auto;
+    margin-top: 50px;
     padding: 50px 30px 15px;
     position: relative;
 }
@@ -3600,7 +3600,93 @@ figcaption {
     width: 300px;
     height: 400px;
     margin-bottom: 40px;
+    margin-left: 80px;
     position: relative;
+}
+
+.edit-gather {
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.edit-gather::before,
+.edit-gather::after,
+.edit-gather .edit-gather-border-left::before,
+.edit-gather .edit-gather-border-right::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    transition: all 0.4s ease;
+}
+
+.edit-gather::before,
+.edit-gather::after {
+    height: 2px;
+    width: 0;
+}
+
+.edit-gather::before {
+    top: 0;
+    left: 0;
+}
+
+.edit-gather::after {
+    bottom: 0;
+    right: 0;
+}
+
+.edit-gather .edit-gather-border-left::before,
+.edit-gather .edit-gather-border-right::before {
+    width: 2px;
+    height: 0;
+}
+
+.edit-gather .edit-gather-border-left::before {
+    left: 0;
+    top: 0;
+}
+
+.edit-gather .edit-gather-border-right::before {
+    right: 0;
+    bottom: 0;
+}
+
+.edit-gather:hover::before,
+.edit-gather:hover::after {
+    width: 100%;
+}
+
+.edit-gather:hover .edit-gather-border-left::before,
+.edit-gather:hover .edit-gather-border-right::before {
+    height: 100%;
+}
+
+.edit-gather-text {
+    position: relative;
+    z-index: 1;
+}
+
+.edit-gather .edit-gather-border-left,
+.edit-gather .edit-gather-border-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
 }
 
 .cityhashtag {
@@ -5111,20 +5197,6 @@ figcaption {
     left: 3px;
 }
 
-.dodonationbutton {
-    color: var(--black);
-    background-color: #fff;
-    background-image: url("../images/donate.png");
-    background-position: 6%;
-    background-repeat: no-repeat;
-    background-size: 30px 30px;
-    border-radius: 20px;
-    margin-left: 76px;
-    font-weight: 700;
-    position: relative;
-    left: 575px;
-}
-
 .hero-heading-center-20 {
     background-color: #f5f7fa;
     border-bottom: 1px solid #e4ebf3;
@@ -5187,12 +5259,6 @@ figcaption {
 
 .shadow-two-9 {
     box-shadow: 0 4px 24px rgba(150, 163, 181, 0.08);
-}
-
-.image-5,
-.addwraper {
-    position: relative;
-    left: 648px;
 }
 
 .navbar,
@@ -5420,17 +5486,6 @@ figcaption {
     position: relative;
 }
 
-.button2-reveal {
-    z-index: 0;
-    transform-origin: 0%;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -41px;
-    margin-left: -45px;
-    position: absolute;
-}
-
 .button2-2 {
     color: #000;
     border: 2px solid #000;
@@ -5441,30 +5496,6 @@ figcaption {
     top: 165.194px;
     left: 70%;
     overflow: hidden;
-}
-
-.button2-3 {
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 15px 45px;
-    text-decoration: none;
-    position: absolute;
-    top: 164.194px;
-    left: 70%;
-    overflow: hidden;
-}
-
-.button2-reveal-2 {
-    z-index: 0;
-    transform-origin: 0%;
-    object-fit: fill;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -40px;
-    margin-left: -45px;
-    position: absolute;
 }
 
 .sendmessage {
@@ -5510,14 +5541,259 @@ figcaption {
 
 .creategather {
     color: #000;
-    border: 2px solid #000;
+    border: 2px solid #817c4d;
     border-radius: 20px;
     padding: 15px 45px;
     text-decoration: none;
     position: absolute;
-    top: 165.194px;
+    top: 44%;
     left: 70%;
     overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+    position: relative;
+    top: 0;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.button2-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #817c4d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.creategather:hover .button2-reveal {
+    transform: scaleX(1);
+}
+
+.creategather:hover {
+    box-shadow: none;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.creategather:active {
+    background-color: #0a3092;
+}
+
+.creategather:hover .button2-text {
+    color: #fff;
+}
+
+.resetpasswordbutton {
+    color: #000;
+    border: 2px solid #817c4d;
+    border-radius: 20px;
+    padding: 15px 45px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+    position: relative;
+    top: 0;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.button2-reveal-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #817c4d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.resetpasswordbutton:hover .button2-reveal-4 {
+    transform: scaleX(1);
+}
+
+.resetpasswordbutton:hover {
+    box-shadow: none;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.resetpasswordbutton:active {
+    background-color: transparent;
+}
+
+.create-initiation {
+    color: #000;
+    border: 2px solid #817c4d;
+    border-radius: 20px;
+    padding: 15px 45px;
+    text-decoration: none;
+    position: absolute;
+    top: 44%;
+    left: 70%;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+    position: relative;
+    top: 0;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.initiation-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #817c4d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.create-initiation:hover .initiation-reveal {
+    transform: scaleX(1);
+}
+
+.create-initiation:hover {
+    box-shadow: none;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.create-initiation:active {
+    background-color: #0a3092;
+}
+
+.create-initiation:hover .button2-text {
+    color: #fff;
+}
+
+.more-about-initiation {
+    color: #000;
+    border: 2px solid #817c4d;
+    border-radius: 0;
+    padding: 10px 30px;
+    text-decoration: none;
+    position: absolute;
+    left: 8px;
+    bottom: -190px;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.button3-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #817c4d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.more-about-initiation:hover .button3-reveal {
+    transform: scaleX(1);
+}
+
+.more-about-initiation:hover {
+    box-shadow: none;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.more-about-initiation:active {
+    background-color: #0a3092;
+}
+
+.more-about-initiation:hover .button3-text-2 {
+    color: #fff;
+}
+
+.more-about-gather {
+    z-index: 1;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 55px;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        border-radius 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    border: 2px solid #817c4d;
+    box-shadow: 0 10px 20px -5px rgba(45, 62, 80, 0.3);
+}
+
+.gather-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #817c4d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+.more-about-gather:hover .gather-reveal {
+    transform: scaleX(1);
+}
+
+.more-about-gather:hover {
+    box-shadow: none;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.more-about-gather:active {
+    background-color: #0a3092;
+}
+
+.more-about-gather:hover .gather-text {
+    color: #fff;
 }
 
 .button2-reveal-copy {
@@ -5527,18 +5803,6 @@ figcaption {
     width: 100%;
     height: 100%;
     margin-top: -35px;
-    margin-left: -45px;
-    position: absolute;
-}
-
-.button2-reveal-2-copy {
-    z-index: 0;
-    transform-origin: 0%;
-    object-fit: fill;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -41.2px;
     margin-left: -45px;
     position: absolute;
 }
@@ -5594,17 +5858,6 @@ figcaption {
     text-decoration: none;
     position: absolute;
     overflow: hidden;
-}
-
-.button2-reveal-3 {
-    z-index: 0;
-    transform-origin: 0%;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -41px;
-    margin-left: -45px;
-    position: absolute;
 }
 
 .registerbutton1 {
@@ -6971,7 +7224,7 @@ figcaption {
     justify-content: center;
     align-items: stretch;
     max-width: 340px;
-    height: 50vh;
+    height: 60vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -10562,19 +10815,9 @@ figcaption {
     left: 59px;
 }
 
-.moreaboutinitiationbutton {
-    background-color: #000;
-    border-radius: 20px;
-    font-family: Lato, sans-serif;
-    transition: transform 0.2s;
-    position: relative;
-    top: 248px;
-    left: 13px;
-}
-
 .location-image {
     position: relative;
-    top: 20px;
+    top: 0px;
     left: 35px;
 }
 
@@ -10634,17 +10877,6 @@ figcaption {
     position: absolute;
     top: 11.6px;
     left: 184px;
-}
-
-.createinitiationbutton {
-    outline-offset: 0px;
-    color: var(--off-white);
-    background-color: #000;
-    border-radius: 20px;
-    outline: 3px solid #817c4d;
-    font-family: Lato, sans-serif;
-    position: relative;
-    left: 467px;
 }
 
 .footer-dark-2 {
@@ -12041,7 +12273,7 @@ figcaption {
     margin-left: 76px;
     font-weight: 700;
     position: relative;
-    left: 575px;
+    left: 538px;
 }
 
 .container-13 {
@@ -12111,7 +12343,8 @@ figcaption {
 .image-5,
 .addwraper {
     position: relative;
-    left: 648px;
+    left: 550px;
+    top: -70px;
 }
 
 .navbar,
@@ -12430,17 +12663,6 @@ figcaption {
     position: relative;
 }
 
-.button2-reveal {
-    z-index: 0;
-    transform-origin: 0%;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -41px;
-    margin-left: -45px;
-    position: absolute;
-}
-
 .button2-2 {
     color: #000;
     border: 2px solid #000;
@@ -12477,18 +12699,6 @@ figcaption {
     position: absolute;
 }
 
-.creategather {
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 15px 45px;
-    text-decoration: none;
-    position: absolute;
-    top: 44%;
-    left: 70%;
-    overflow: hidden;
-}
-
 .button2-reveal-copy {
     z-index: 0;
     transform-origin: 0%;
@@ -12496,18 +12706,6 @@ figcaption {
     width: 100%;
     height: 100%;
     margin-top: -35px;
-    margin-left: -45px;
-    position: absolute;
-}
-
-.button2-reveal-2-copy {
-    z-index: 0;
-    transform-origin: 0%;
-    object-fit: fill;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    margin-top: -41.2px;
     margin-left: -45px;
     position: absolute;
 }
@@ -14301,8 +14499,8 @@ figcaption {
     color: #fff;
     text-align: center;
     letter-spacing: 0.03em;
-    background-color: #020202;
-    border: 1px solid #2962ff;
+    background-color: black;
+    border: 1px solid black;
     border-radius: 8px;
     flex: none;
     grid-template-rows: auto auto;
@@ -14331,12 +14529,12 @@ figcaption {
 .ms-button:hover {
     box-shadow: none;
     color: #fff;
-    background-color: #1051b9;
+    background-color: #817c4d;
     transform: translate(0, 2px);
 }
 
 .ms-button:active {
-    background-color: #0a3092;
+    background-color: #817c4d;
 }
 
 .ms-list-container {
@@ -14354,21 +14552,6 @@ figcaption {
     padding-bottom: 8px;
     font-family: Lato, sans-serif;
     font-weight: 700;
-}
-
-.resetpasswordbutton {
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 15px 45px;
-    line-height: 1.2;
-    text-decoration: none;
-    position: relative;
-    top: -384px;
-    bottom: 0;
-    left: 769px;
-    right: 0;
-    overflow: hidden;
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1680px) {
@@ -14930,23 +15113,15 @@ input[type="file"] {
     padding: 10px 20px;
     cursor: pointer;
     background-color: transparent;
-    /* Прозорий фон */
     color: black;
-    /* Чорний текст */
     border-radius: 4px;
-    /* Закруглені кути */
     border: 2px solid black;
-    /* Чорний колір обрамлення */
     position: relative;
-    /* Важливо для анімації */
     overflow: hidden;
-    /* Приховати вихід за межі елемента */
     transition: color 0.8s ease;
-    /* Анімація зміни кольору тексту */
-    margin-right: 20em;
+    margin-right: 0em;
+    margin-top: 1em;
 }
-
-/* Елемент для анімації фону */
 
 .custom-file-upload::before {
     content: "";
@@ -14956,35 +15131,34 @@ input[type="file"] {
     width: 300%;
     height: 300%;
     background-color: black;
-    /* Чорний фон */
     transition: transform 0.5s ease;
-    /* Анімація зміни розміру */
     transform: translate(-50%, -50%) scale(0);
-    /* Початковий стан */
     z-index: 0;
-    /* На задньому плані */
 }
-
-/* Текст кнопки */
 
 .custom-file-upload span {
     position: relative;
     z-index: 1;
-    /* На передньому плані */
     transition: color 0.3s ease;
-    /* Анімація зміни кольору тексту */
 }
-
-/* Анімація при наведенні */
 
 .custom-file-upload:hover::before {
     transform: translate(-50%, -50%) scale(1);
-    /* Заповнення фону */
 }
 
 .custom-file-upload:hover span {
     color: white;
-    /* Білий текст при наведенні */
+}
+
+#file-name-display {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.container-13 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-heading-center-188 {
@@ -15008,6 +15182,22 @@ input[type="file"] {
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
     /* Накладаємо тінь з високою прозорістю */
     z-index: 0;
+}
+
+.background-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
+    z-index: 1;
+}
+
+.hero-heading-center-20 .container-10,
+.hero-heading-center-20 .container-13 {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-heading-center-188 .container-12,
