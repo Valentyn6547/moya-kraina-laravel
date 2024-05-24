@@ -90,6 +90,7 @@
          class="button2-reveal-4"></div>
 </a>
 
+
     </section>
     <section class="gathersheaderpart">
         <div class="container-8">
@@ -98,15 +99,11 @@
         {{--        <a href="#" class="allgathersbutton w-button">Всі збори</a>--}}
         {{--        <a href="#" class="donatedbutton w-button">Задонатив(ла)</a>--}}
         {{--        <a href="#" class="mygathersbutton w-button">Мої збори</a>--}}
-        <a data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d8" href="/create-gather"
-           class="creategather w-inline-block">
-            <div data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d9" style="color:rgb(0,0,0)" class="button2-text">Створити
-                збір
-            </div>
-            <div data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1db"
-                 style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                 class="button2-reveal"></div>
-        </a>
+        <a data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d8" href="/create-gather" class="creategather w-inline-block">
+    <div data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1d9" class="button2-text">Створити збір</div>
+    <div data-w-id="9dc008b8-91d9-d267-3330-8b79ea84f1db" class="button2-reveal"></div>
+</a>
+
     </section>
     <section class="gathers_selection userpage-gathers">
         @foreach ($gathers as $gather)
@@ -132,37 +129,13 @@
             
             </p></div>
             {{-- <div class="dividerline">---------------------------------------------------------</div> --}}
-            <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color:rgb(230,230,230)"
-   href="/gather/{{$gather['gather_id']}}" class="moreaboutgather w-inline-block">
-    <div
-        style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-        class="top-line"></div>
-    <div class="button3-text-2">Більше про збір</div>
-    <div
-        style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-        class="bottom-line"></div>
-    <div
-        style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-        class="left-line"></div>
-    <div
-        style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-        class="right-line"></div>
+            <a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" href="/gather/{{$gather['gather_id']}}" class="more-about-gather w-inline-block">
+    <div class="gather-reveal"></div>
+    <div class="gather-text">Більше про збір</div>
 </a>
-<a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" style="background-color: rgb(255 222 146);"
-href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
- <div
-     style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-     class="top-line"></div>
- <div class="button3-text-2">Редагувати</div>
- <div
-     style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-     class="bottom-line"></div>
- <div
-     style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-     class="left-line"></div>
- <div
-     style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-     class="right-line"></div>
+
+<a data-w-id="feec79e7-73e0-3571-3973-1ae56652380f" href="/edit-gather/{{$gather['gather_id']}}" class="edit-gather w-inline-block">
+    <div class="edit-gather-text">Редагувати</div>
 </a>
         </div>
         @endforeach
@@ -174,15 +147,11 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
         {{-- <a href="#" class="allinitiationsbutton w-button">Всі ініціативи</a>
         <a href="#" class="initiatedbutton w-button">Проявив(ла) ініціативу</a>
         <a href="#" class="myinitiationsbutton w-button">Мої ініціативи</a> --}}
-        <a data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66400" href="{{ route('createInitiation') }}"
-           class="button2-3 w-inline-block">
-            <div data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66401" style="color:rgb(0,0,0)" class="button2-text">Створити
-                ініціативу
-            </div>
-            <div data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66403"
-                 style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                 class="button2-reveal-2-copy"></div>
-        </a>
+        <a data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66400" href="{{ route('createInitiation') }}" class="create-initiation w-inline-block">
+    <div data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66401" class="button2-text">Створити ініціативу</div>
+    <div data-w-id="9fdc8d8e-f3e7-bda1-fd40-bbbda0d66403" class="initiation-reveal"></div>
+</a>
+
     </section>
     <section class="initiations">
     <div class="initiations-container">
@@ -209,22 +178,11 @@ href="/edit-gather/{{$gather['gather_id']}}" class="editgather w-inline-block">
             <p style="margin-left: 83px;">{{$activity['address']}}</p>
             <div class="text-block-6">{{$activity['time']}}</div>
             <div class="datatext">{{$activity['publish_date']}}</div>
-            <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"
-               href="gatherexample.html" class="moreaboutinitiation w-inline-block">
-                <div
-                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                    class="top-line"></div>
-                <div class="button3-text-2">Більше про ініціативу</div>
-                <div
-                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                    class="bottom-line"></div>
-                <div
-                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                    class="left-line"></div>
-                <div
-                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                    class="right-line"></div>
-            </a>
+            <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" href="gatherexample.html" class="more-about-initiation w-inline-block">
+    <div class="button3-text-2">Більше про ініціативу</div>
+    <div class="button3-reveal"></div>
+</a>
+
         </div>
         @endforeach
     </div>
