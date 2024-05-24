@@ -76,7 +76,11 @@ class Cabinet extends Controller
                 'gathers' => $gathers,
                 'recordHashTags' => $recordHashTags,
                 'activities' => $activities,
-                'recordHashTagsA' => $recordHashTagsA
+                'recordHashTagsA' => $recordHashTagsA,
+                'statistic' => array(
+                    "count_activities" => count($activities),
+                    "count_gathers" => count($gathers)
+                )
             ];
 
             return view('cabinet', $user_data);

@@ -18,7 +18,7 @@
     </div>
     <div class="homebuttons">
     <div class="home-makeinitiationbutton">
-        <a href="#" class="initbutton w-inline-block">
+        <a href="/activities" class="initbutton w-inline-block">
           <div class="donatebuttontext">Проявити ініціативу <i class="fa-light fa-location-dot"></i></div>
         </a>
         <a href="#" class="button3-background w-inline-block"></a>

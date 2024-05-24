@@ -97,6 +97,11 @@ function displayactivities(activities, recordHashTags) {
             });
         }
 
+        if (activity['status'] == 'active') {
+            var status_styles = 'background-color: #00c938;';
+        } else {
+            var status_styles = 'background-color: #c5cf01;';
+        }
 
 
         const activity_html = $(`
@@ -105,7 +110,7 @@ function displayactivities(activities, recordHashTags) {
     
         <div class="gather_img" style="background-image: url(${img_url}">
         <div class="cityhashtag">${hashTags}</div>
-        <div class="status">     ${activity['status']}     </div>
+        <div class="status" style="${status_styles}">     ${activity['status']}     </div>
         </div>
       
         <div class="initiationname">${activity['title']}</div>
@@ -124,7 +129,7 @@ function displayactivities(activities, recordHashTags) {
       
   
         <a data-w-id="7337f46b-09df-2e59-77f4-9167de95c0e4" style="background-color:rgb(230,230,230)"
-           href="gatherexample.html" class="moreaboutinitiation w-inline-block">
+           href="/activity/${activity["activity_id"]}" class="moreaboutinitiation w-inline-block">
             <div
                 style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                 class="top-line"></div>
