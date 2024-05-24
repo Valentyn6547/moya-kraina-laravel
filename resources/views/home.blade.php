@@ -46,20 +46,7 @@
         </div>
       </div>
       <a href="#" data-w-id="1ad8ce23-ea03-fd25-7a19-dd920c65f082" class="home_about_video w-inline-block w-lightbox"><img src="images/voluntary.jpg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="home_about_video-thumbnail">
-        <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "url": "https://www.youtube.com/watch?v=Qt2yAW6zN_U",
-      "originalUrl": "https://www.youtube.com/watch?v=Qt2yAW6zN_U",
-      "width": 940,
-      "height": 528,
-      "thumbnailUrl": "http://i.ytimg.com/vi/Qt2yAW6zN_U/hqdefault.jpg",
-      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FQt2yAW6zN_U&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQt2yAW6zN_U&image=http%3A%2F%2Fi.ytimg.com%2Fvi%2FQt2yAW6zN_U%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-      "type": "video"
-    }
-  ],
-  "group": ""
-}</script>
+        <script type="application/json" class="w-json"></script>
       </a>
     </div>
   </section>

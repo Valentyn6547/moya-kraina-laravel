@@ -6,6 +6,7 @@
       <h1 class="gatherheader margin-bottom-32px">{{$gather['title']}}</h1>
     </div>
     <div class="enddategather">Дата закінчення збору: {{$gather['publish_date']}}</div>
+    
     <a href="{{$gather['donation_link']}}" target="_blank" class="dodonationbutton w-button">        Задонатити    </a>
       <div class="padding-global">
         <div class="nav_container">
